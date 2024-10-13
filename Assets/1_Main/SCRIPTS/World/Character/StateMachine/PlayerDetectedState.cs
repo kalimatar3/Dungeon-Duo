@@ -10,7 +10,7 @@ public class PlayerDetectedState : PlayerState
     public override void EnterState()
     {
         base.EnterState();
-        Debug.Log("Enter DetectedState");
+        Debug.Log(character.name +" Enter DetectedState");
         this.character.Movement.IsFacing = true;
     }
     public override void FrameUpdate()

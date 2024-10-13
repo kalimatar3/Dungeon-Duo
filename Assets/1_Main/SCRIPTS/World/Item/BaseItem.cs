@@ -1,16 +1,15 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UIElements;
 [RequireComponent(typeof(Collider2D))]
 public abstract class BaseItem : MyBehaviour,Iinteractable
 {
-    [Header("Data")]
-    [SerializeField] protected string Name;
-    [SerializeField] protected Sprite sprite;
     [Header("Components")]
     [SerializeField] protected SpriteRenderer model;
     [SerializeField] protected BoxCollider2D box;
     #region getter && setter
-    public string ItemName {get {return Name;}}
+    public SpriteRenderer Model {get {return model;}}
+    public BoxCollider2D Box {get {return box;}}
     #endregion
     protected override void LoadComponents()
     {
@@ -20,12 +19,12 @@ public abstract class BaseItem : MyBehaviour,Iinteractable
     }
     protected void Loadbox() {
         this.box = GetComponent<BoxCollider2D>();
+        this.box.isTrigger = true;
     }
     protected void Loadmodel() {
         this.model = GetComponentInChildren<SpriteRenderer>();
-        this.model.sprite = this.sprite;
     }
-    protected void OnEnable() {
+    protected virtual void OnEnable() {
         this.OnDrop();
     }
     public virtual void OnCollect(BaseCharacter character) {

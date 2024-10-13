@@ -7,12 +7,18 @@ public class RoomOpenState : RoomState
     public RoomOpenState(RoomStatemachine statemachine, Room room) : base(statemachine, room)
     {
     }
-
     public override void EnterState()
     {
         base.EnterState();
         foreach(var ele in room.ListGate) {
             ele.CanOpen = true;
         }
+        if(room.GetComponent<FightRoom>())
+        {
+            foreach(var ele in room.GetComponent<FightRoom>().ListEnemy) {
+                ele.CanDetected  = false;
+            }
+        }
+
     }
 }

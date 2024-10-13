@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public abstract class Weapon : BaseItem
 {
-    [Header("Components")]
-    //
+    [Header("Data")]
+    [SerializeField] protected WeaponSO SO;
     [Header("Statisitcs")]
     [SerializeField] protected float dame;
     [SerializeField] protected float firerate;
@@ -14,28 +14,18 @@ public abstract class Weapon : BaseItem
     public float Firerate {get {return firerate;}}
     public float Range {get {return range;} }
     #endregion
-    protected override void LoadComponents()
-    {
-        base.LoadComponents();
-        this.InitStatistics();
-        this.InitData();
+    protected override void OnEnable() {
+        base.OnEnable();
+        this.dame = SO.Dame;
+        this.firerate = SO.Firerate;
+        this.range = SO.Range;
     }
-    /// <summary>
-    ///  Dame
-    ///  firerate
-    ///  Range
-    /// </summary>
-    protected abstract void InitStatistics();
-    /// <summary>
-    /// Sprite
-    /// </summary>
-    protected abstract void InitData();
-    public abstract void Attack();
+    public abstract void AttackScheme();
     public override void OnCollect(BaseCharacter character)
     {
         base.OnCollect(character);
         if(!(Player)character) return;
         character.GetComponent<Player>().Equipment.EquipWeapon(this);
-      this.model.gameObject.SetActive(true);
+        character.GetComponent<Player>().Weapon = character.GetComponent<Player>().Equipment.Weapons.Peek();
     }
 }

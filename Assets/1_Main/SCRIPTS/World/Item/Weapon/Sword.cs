@@ -5,12 +5,13 @@ using UnityEngine;
 
 public abstract class Sword : Weapon
 {
-    public override void Attack()
+    public override void AttackScheme()
     {
         this.StartCoroutine(this.SwingModel(180,0.1f));
     }
     protected IEnumerator SwingModel(float angle, float duration)
         {
+            this.model.transform.localPosition = new Vector3(0,0.5f,0);
             int sign = 0;
             if(this.transform.up.y >= 0) {
                 sign = 1;

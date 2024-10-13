@@ -37,11 +37,8 @@ public class RoomGenerator : SimpleRandomWalkDungeonGenerator
         floor.UnionWith(corridors);
         HashSet<Vector2Int> wallpositions = WallGenerator.CreateWalls(floor,TilemapVisualizer.Instance);
         foreach(var ele in wallpositions) {
-            GameObject box = new GameObject("Box");
+            Transform box =  MapSpawner.Instance.Spawn("WallBox",new Vector3(ele.x,ele.y,0),Quaternion.identity);
             box.transform.parent = this.transform;
-            box.transform.position = (Vector2)ele;
-            BoxCollider2D colldier = box.AddComponent(typeof(BoxCollider2D)) as BoxCollider2D;
-            colldier.offset = new Vector2(0.5f,0.5f);
         }
     }
     private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList)

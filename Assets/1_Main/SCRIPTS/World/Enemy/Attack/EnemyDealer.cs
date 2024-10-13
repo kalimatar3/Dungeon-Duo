@@ -1,7 +1,6 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
-
 public class EnemyDealer : DameDealer, IDespawnable
 {   
     [SerializeField] protected bool CanDespawnbytime = true,

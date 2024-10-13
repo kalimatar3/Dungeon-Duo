@@ -1,44 +1,36 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Xml.Schema;
+using System.Net;
 using UnityEngine;
-
 public class PlayerEquipment : MyBehaviour
 {
     [SerializeField] protected Player character;
-    [SerializeField] protected Weapon[] ListWeapon = new Weapon[2];
+    [SerializeField] protected Stack<Weapon> weapons = new Stack<Weapon>();
+    public Stack<Weapon> Weapons {get {return weapons;}}
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.Loadcharacter();
-        this.ListWeapon = new Weapon[2];
+        weapons = new Stack<Weapon>();
     }
     protected void Loadcharacter() {
         this.character = GetComponentInParent<Player>();
     }
     public void EquipWeapon(Weapon weapon) {
-        for(int i = 0 ; i < ListWeapon.Length; i++) {
-            if(ListWeapon[i] == null) {
-                ListWeapon[i] = weapon;
-                this.character.Weapon = ListWeapon[i];
-                return;
-            }
-        }
-        for(int i = 0 ; i < ListWeapon.Length; i++) { 
-            if(character.Weapon == ListWeapon[i]) {
-                ListWeapon[i] = weapon;
-                return;
-            }
-        }
+        if(weapons.Count > 1 && weapon == weapons.Peek()) return;
+        if(weapons.Count > 2) weapons.Pop();
+        weapons.Push(weapon);
+        weapon.transform.parent = this.transform;
+        weapon.transform.localPosition = Vector3.zero;
+        weapon.Model.transform.localPosition = Vector3.zero;
+        weapon.Model.gameObject.SetActive(false);
+        weapon.Box.enabled = false;
     }
-    public void ChangeWeapon(Weapon weapon) {
-        foreach(var ele in ListWeapon) {
-            if(ele == weapon) {
-                character.Weapon = weapon;
-            }
-        }
-        Debug.LogWarning("Cant Found" + weapon.ItemName + "in ListWeapon");
-        return;
+    public void ChangeWeapon() {
+        if(weapons.Count !=2) return;
+        Weapon weapon1 = weapons.Pop();
+        Weapon weapon2 = weapons.Pop();
+        weapons.Push(weapon2);
+        weapons.Push(weapon1);
+        character.Weapon = weapons.Peek();
     }
 }

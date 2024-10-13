@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class PlayerIdleState : PlayerState
@@ -10,8 +11,10 @@ public class PlayerIdleState : PlayerState
     public override void EnterState()
     {
         base.EnterState();
-        Debug.Log("Enter IdleState");
+        Debug.Log(character.name + " Enter IdleState");
         character.Movement.IsFacing = false;
+        character.Canattack = true;
+        character.Caninteract = true;
     }
     public override void FrameUpdate()
     {

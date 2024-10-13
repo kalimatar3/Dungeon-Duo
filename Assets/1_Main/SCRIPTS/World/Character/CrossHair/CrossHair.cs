@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class CrossHair : MonoBehaviour
 {
-    [SerializeField] protected Player character;
+    [SerializeField] protected Player player;
     public void InfrontofPlayer() {
-        this.transform.position = character.transform.position + character.transform.right * 1f;
+        if(InputManager.Instance.MovingInput != Vector2.zero) {
+            this.transform.position = player.transform.position +  (Vector3)InputManager.Instance.MovingInput; 
+        }
+        else this.transform.position = player.transform.position + player.transform.right * 1f;
     }
     public void FollowTarget(Transform target) {
         this.transform.position = target.transform.position;

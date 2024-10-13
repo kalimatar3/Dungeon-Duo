@@ -32,7 +32,7 @@ public abstract class DameDealer : MyBehaviour, IHitable
     }
     protected virtual void DealDame(float dame,IDameable dameable) {
         dameable.DeductHp(dame);
-        Debug.Log(this.transform.name + " Deal "  + dame);        
+        Debug.Log(this.transform.name + " Deal "  + dame + " to " + dameable.GetTransform().name);        
     }
     protected void OnTriggerEnter2D(Collider2D collision)
     {
@@ -47,5 +47,12 @@ public abstract class DameDealer : MyBehaviour, IHitable
         {
             this.Hit(collision.transform.GetComponent<IDameable>());
         }
+    }
+    public virtual void DoEffect(IDameable dameable)
+    {
+    }
+    public Transform GetTransform()
+    {
+        return this.transform;
     }
 }

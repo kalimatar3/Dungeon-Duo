@@ -6,10 +6,10 @@ public class DameReciver : MyBehaviour, IDameable
     [SerializeField] protected bool isDead;
     public float Hp { get { return hp; } set { hp = value; } }
     public bool IsDead {get {return isDead;}}
-    public BoxCollider2D Box { get; set; }
-    protected void LoadBox()
+    public Collider2D Box { get; set; }
+    protected virtual void LoadBox()
     {
-        this.Box = GetComponent<BoxCollider2D>();
+        this.Box = GetComponent<Collider2D>();
         this.Box.isTrigger = true;
     }
     protected virtual void OnEnable()
@@ -47,7 +47,11 @@ public class DameReciver : MyBehaviour, IDameable
     {
         return this.transform;
     }
-    public void getEffect(Effect effect) {
-        StartCoroutine(effect.DoEffect(this));
+
+    public virtual void Stun(float time)
+    {
+    }
+    public virtual void Knockback(IHitable hitable, float power)
+    {
     }
 }

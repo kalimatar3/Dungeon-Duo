@@ -12,12 +12,9 @@ public class EnemyReciver : DameReciver
     {
         this.enemy = this.GetComponentInParent<Enemy>();
     }
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        this.hp = enemy.MaxHp;
-    }
     public override void Dead()
     {
+        base.Dead();
+        this.enemy.DeSpawn();
     }
 }

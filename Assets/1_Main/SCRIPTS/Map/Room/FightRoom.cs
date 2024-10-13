@@ -5,7 +5,13 @@ using UnityEngine;
 public class FightRoom : Room
 {
     [SerializeField] protected List<Enemy> listenemy;
+    protected RoomAccesedState accesedState;
     public List<Enemy> ListEnemy {get {return listenemy;}}
+    protected override void Awake()
+    {
+        base.Awake();
+        accesedState = new RoomAccesedState(statemachine,this);
+    }
     public override void CreateRoom(HashSet<Vector2Int> floorpositions)
     {
         base.CreateRoom(floorpositions);
@@ -15,7 +21,8 @@ public class FightRoom : Room
         if(listenemy.Count > 0) listenemy.Clear();
         HashSet<Vector2Int> EnemyPos = this.InitListEnemyPos();
         foreach(var ele in EnemyPos) {
-            Transform enemy = EnemySpawner.Instance.Spawn("TestEnemy",new Vector3(ele.x,ele.y,0),Quaternion.identity);
+            Transform enemy = EnemySpawner.Instance.Spawn("Witch",new Vector3(ele.x,ele.y,0),Quaternion.identity);
+            enemy.GetComponent<Enemy>().RoomHolder = this;
             listenemy.Add(enemy.GetComponent<Enemy>());
         }
     }
@@ -41,14 +48,11 @@ public class FightRoom : Room
     protected override void TriggerState()
     {
         base.TriggerState();
-        foreach (var ele in listenemy)
-        {
-            if(!ele.Reciver.IsDead) {
-                if(ele.StateMachine.CurState.GetType() == typeof(EnemyTrackingState)||ele.StateMachine.CurState.GetType() == typeof(EnemyAttackState))
-                {
-                    statemachine.ChangeSate(closeState);
-                    return;
-                }
+        this.statemachine.CurState.FrameUpdate();
+        foreach(var ele in listenemy) {
+            if(ele.Isdetecting) {
+                statemachine.ChangeSate(closeState);
+                return;
             }
         }
         this.statemachine.ChangeSate(openState);

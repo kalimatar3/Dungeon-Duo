@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Net.WebSockets;
+using TMPro;
 using UnityEngine;
 public abstract class Room : MyBehaviour {
     protected HashSet<Vector2Int> floorpositions = new HashSet<Vector2Int>();
@@ -34,6 +36,7 @@ public abstract class Room : MyBehaviour {
         gate.GetComponent<Roomgate>().Initinite((HashSet<Vector2Int>)positions);
     }
     protected virtual void FixedUpdate() {
+        statemachine.CurState.FrameUpdate();
         this.TriggerState();
     }
 } 

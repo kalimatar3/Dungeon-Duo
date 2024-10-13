@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.Security;
 using UnityEngine;
 
 public class EnemyCheck : MyBehaviour
 {
-    [SerializeField] protected Player character;
+    [SerializeField] protected Player player;
     [SerializeField] protected bool check;
     [SerializeField] protected LayerMask EnemyLayer;
     protected float minDistance = 10f;
-    [SerializeField] protected float DetectionRange = 10f;
+    protected Vector2 minnoticebox;
     public bool Check { get {  return check;} } 
     protected override void LoadComponents()
     {
@@ -18,32 +15,33 @@ public class EnemyCheck : MyBehaviour
     }
     protected void LoadPlayer()
     {
-        this.character = GetComponentInParent<Player>();
+        this.player = GetComponentInParent<Player>();
     }
     protected void OnEnable() {
-        this.minDistance = DetectionRange;
+        this.minnoticebox = player.NoticeBox;
     }
     protected void FixedUpdate()
     {
-        RaycastHit2D circleCheck = Physics2D.CircleCast(this.transform.position,DetectionRange,Vector2.up,0,EnemyLayer);
-        if(circleCheck) {
-            if((circleCheck.transform.position - this.transform.position).magnitude <= minDistance) {
-                this.minDistance = (circleCheck.transform.position - this.transform.position).magnitude;
-                this.character.Target = circleCheck.transform;
+        //RaycastHit2D boxcheck = Physics2D.CircleCast(this.transform.position,DetectionRange,Vector2.up,0,EnemyLayer);
+        RaycastHit2D boxcheck = Physics2D.BoxCast(this.transform.position,player.NoticeBox,0f,Vector2.up,0,EnemyLayer);
+        if(boxcheck) {
+            if((boxcheck.transform.position - this.transform.position).x <= minnoticebox.x && (boxcheck.transform.position - this.transform.position).y <= minnoticebox.y ) {
+                this.minnoticebox = boxcheck.transform.position - this.transform.position;
+                this.player.Target = boxcheck.transform;
             }
         }
         else 
         {
-            character.Target = null;
-            minDistance = DetectionRange;
+            player.Target = null;
+        this.minnoticebox = player.NoticeBox;
         }
-        if(character.Target) check = true;
+        if(player.Target) check = true;
         else check = false; 
     }
     protected void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, DetectionRange);
+        Gizmos.DrawWireCube(transform.position, player.NoticeBox);
     }
 
 }

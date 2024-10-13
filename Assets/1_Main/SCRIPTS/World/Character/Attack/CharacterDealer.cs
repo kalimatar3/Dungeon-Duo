@@ -5,9 +5,11 @@ using UnityEngine;
 public abstract class CharacterDealer : DameDealer, IDespawnable
 {
     [SerializeField] protected float lifetime;
+    [SerializeField] protected bool canDespawnbytime = true;
+    [SerializeField] protected bool canDeSpawnbyhit = true;
     protected override void OnEnable() {
         base.OnEnable();
-        this.StartCoroutine(this.CrDespawn());
+        if(canDespawnbytime) this.StartCoroutine(this.CrDespawn());
     }
     protected virtual IEnumerator CrDespawn() {
         yield return new WaitForSecondsRealtime(lifetime);
@@ -21,6 +23,6 @@ public abstract class CharacterDealer : DameDealer, IDespawnable
     {
         if(dameable.GetType() == typeof(PlayerReciver)) return;
         base.Hit(dameable);
-        this.DeSpawn();
+        if(canDeSpawnbyhit) this.DeSpawn();
     }
 }

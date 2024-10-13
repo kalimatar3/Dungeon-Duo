@@ -10,6 +10,8 @@ public class EnemyTrackingState : EnemyState
     public override void EnterState()
     {
         base.EnterState();
+        enemy.Movement.Speed = enemy.SO.TrackingSpeed;
+        enemy.Isdetecting = true;
     }
     public override void FrameUpdate()
     {

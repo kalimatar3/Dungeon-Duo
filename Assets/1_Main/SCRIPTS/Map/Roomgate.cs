@@ -20,26 +20,23 @@ public class Roomgate : MyBehaviour,Iinteractable
         this.CanOpen = true;
         this.positions = position;
         TilemapVisualizer.Instance.PaintRoomGateTiles(positions,this.tilemap);
-        foreach(var ele in position) {
-            GameObject gate = new GameObject("gate");
-            gate.transform.position = new Vector3(ele.x,ele.y);
-            gate.transform.parent = this.transform;
-            BoxCollider2D box = gate.AddComponent(typeof(BoxCollider2D)) as BoxCollider2D;
-            this.listbox.Add(box);
-            box.offset = new Vector2(0.5f,0.5f);
+        foreach(var ele in positions) {
+            Transform box =  MapSpawner.Instance.Spawn("WallBox",new Vector3(ele.x,ele.y,0),Quaternion.identity);
+            box.transform.parent = this.transform;
+            this.listbox.Add(box.GetComponent<BoxCollider2D>());
         }  
     }
     public void Open() {
         if(!CanOpen) return;
         this.tilemap.gameObject.SetActive(false);
         foreach(var ele in listbox) {
-            ele.enabled  = false;
+            ele.isTrigger  = true;
         }        
     }
     public void Close() {
         this.tilemap.gameObject.SetActive(true);
         foreach(var ele in listbox) {
-            ele.enabled = true;
+            ele.isTrigger = false;
         }
     }
     public Transform GetTransform()

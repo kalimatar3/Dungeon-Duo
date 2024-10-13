@@ -20,10 +20,17 @@ public class PlayerCheck : MyBehaviour
     }
     protected void FixedUpdate()
     {
-        CheckCircle = Physics2D.CircleCast(this.transform.position,enemy.DetectionRange, Vector2.up, 0f, CharacterLayer);
+        CheckCircle = Physics2D.CircleCast(this.transform.position,enemy.DetectionRange, Vector2.up, 0f, CharacterLayer); 
         if(CheckCircle) {
-            enemy.TarGet = CheckCircle.transform.GetComponent<Player>();
-            check = true;
+            Vector3 dir = ((Vector3)CheckCircle.point - this.transform.position).normalized;
+            float distance = ((Vector3)CheckCircle.point - this.transform.position).magnitude;
+            RaycastHit2D wallhit = Physics2D.Raycast(this.transform.position,dir,distance,LayerMask.GetMask("Wall"));
+            if(!wallhit) 
+            {
+                enemy.Isdetecting = true;
+                enemy.TarGet = CheckCircle.transform.GetComponent<Player>();
+                check = true;
+            }
         }
         else 
         {
