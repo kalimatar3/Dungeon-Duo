@@ -9,7 +9,6 @@ public class EnemyAttackState : EnemyState
     public override void EnterState()
     {
         base.EnterState();
-        enemy.Isdetecting = true;
         timer = 0;
     }
     public override void FrameUpdate()

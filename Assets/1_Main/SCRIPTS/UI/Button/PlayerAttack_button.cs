@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack_button : BaseButton
 {
-    public Player player;
-    public override void Act()
+    public override void OnClick()
     {
-        StartCoroutine(this.CrAct());
-    }
-    protected IEnumerator CrAct() {
-        player.Attack();
-        this.Permission = false;
-        yield return new WaitForSeconds(player.Weapon.Firerate);
-        this.Permission = true;
+        Player.Instance.Attack();
     }
 }

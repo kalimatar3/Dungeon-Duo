@@ -22,7 +22,6 @@ public class EnemyCheck : MyBehaviour
     }
     protected void FixedUpdate()
     {
-        //RaycastHit2D boxcheck = Physics2D.CircleCast(this.transform.position,DetectionRange,Vector2.up,0,EnemyLayer);
         RaycastHit2D boxcheck = Physics2D.BoxCast(this.transform.position,player.NoticeBox,0f,Vector2.up,0,EnemyLayer);
         if(boxcheck) {
             if((boxcheck.transform.position - this.transform.position).x <= minnoticebox.x && (boxcheck.transform.position - this.transform.position).y <= minnoticebox.y ) {

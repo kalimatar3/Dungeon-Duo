@@ -10,9 +10,8 @@ public class RoomOpenState : RoomState
     public override void EnterState()
     {
         base.EnterState();
-        foreach(var ele in room.ListGate) {
-            ele.CanOpen = true;
-        }
+        this.room.CurstateName = "OpenState";
+        room.StartCoroutine(this.CrDelayopenGate());
         if(room.GetComponent<FightRoom>())
         {
             foreach(var ele in room.GetComponent<FightRoom>().ListEnemy) {
@@ -20,5 +19,14 @@ public class RoomOpenState : RoomState
             }
         }
 
+    }
+    protected IEnumerator CrDelayopenGate() {
+        yield return new WaitUntil(predicate:()=> {
+            if(room.ListGate.Count <= 0) return false;
+            return true;
+        });
+        foreach(var ele in room.ListGate) {
+            ele.Open();
+        }      
     }
 }

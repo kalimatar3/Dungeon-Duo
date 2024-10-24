@@ -10,7 +10,6 @@ public class EnemyDeathState : EnemyState
     public override void EnterState()
     {
         base.EnterState();
-        enemy.Isdetecting = false;
         enemy.CanDetected = false;
     }
 }

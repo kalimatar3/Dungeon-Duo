@@ -4,15 +4,11 @@ using UnityEngine;
 
 public abstract class BaseMovement : MyBehaviour
 {
-    [SerializeField] protected BaseCharacter character;
+    [SerializeField] protected float speed = 5;
+    public float Speed {get {return speed;} set {speed = value;}}
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadCharacter();
     }
-    protected void LoadCharacter() {
-        this.character = GetComponentInParent<BaseCharacter>();
-    }
-    public abstract void FacingtoTarget(Transform target);
-    public abstract void Move();
+    public abstract void MoveScheme();
 }

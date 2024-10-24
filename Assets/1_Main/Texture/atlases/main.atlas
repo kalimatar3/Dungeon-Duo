@@ -1,0 +1,2084 @@
+
+main.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+a_fish
+  rotate: false
+  xy: 1793, 259
+  size: 109, 112
+  orig: 109, 112
+  offset: 0, 0
+  index: -1
+alarm_dot
+  rotate: false
+  xy: 1747, 1220
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+ammo_bar_icon
+  rotate: false
+  xy: 2005, 1276
+  size: 27, 25
+  orig: 27, 25
+  offset: 0, 0
+  index: -1
+b_berts
+  rotate: false
+  xy: 1707, 593
+  size: 103, 83
+  orig: 103, 83
+  offset: 0, 0
+  index: -1
+bar_empty
+  rotate: false
+  xy: 380, 3
+  size: 216, 22
+  orig: 216, 22
+  offset: 0, 0
+  index: -1
+bar_front
+  rotate: false
+  xy: 1344, 36
+  size: 301, 27
+  orig: 301, 27
+  offset: 0, 0
+  index: -1
+bitcoin1
+  rotate: false
+  xy: 2009, 1195
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+bitcoin100k
+  rotate: false
+  xy: 1804, 897
+  size: 236, 147
+  orig: 236, 147
+  offset: 0, 0
+  index: -1
+bitcoin2
+  rotate: false
+  xy: 1972, 1576
+  size: 31, 30
+  orig: 31, 30
+  offset: 0, 0
+  index: -1
+bone_arrow
+  rotate: false
+  xy: 598, 2
+  size: 91, 23
+  orig: 91, 23
+  offset: 0, 0
+  index: -1
+bos_locker
+  rotate: false
+  xy: 1812, 593
+  size: 101, 83
+  orig: 101, 83
+  offset: 0, 0
+  index: -1
+boss_bullet
+  rotate: false
+  xy: 1645, 868
+  size: 43, 27
+  orig: 43, 27
+  offset: 0, 0
+  index: -1
+bow_arrow
+  rotate: false
+  xy: 1086, 16
+  size: 86, 18
+  orig: 86, 18
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 1284, 186
+  size: 22, 14
+  orig: 22, 14
+  offset: 0, 0
+  index: -1
+capture0
+  rotate: false
+  xy: 1898, 1534
+  size: 72, 72
+  orig: 72, 72
+  offset: 0, 0
+  index: -1
+capture_flag
+  rotate: false
+  xy: 1714, 8
+  size: 56, 73
+  orig: 56, 73
+  offset: 0, 0
+  index: -1
+circle26
+  rotate: false
+  xy: 2009, 1128
+  size: 27, 27
+  orig: 27, 27
+  offset: 0, 0
+  index: -1
+city_hand
+  rotate: false
+  xy: 1779, 897
+  size: 18, 19
+  orig: 18, 19
+  offset: 0, 0
+  index: -1
+clock
+  rotate: false
+  xy: 1872, 3
+  size: 25, 30
+  orig: 25, 30
+  offset: 0, 0
+  index: -1
+cloud1
+  rotate: false
+  xy: 1645, 897
+  size: 132, 43
+  orig: 132, 43
+  offset: 0, 0
+  index: -1
+cloud_city3
+  rotate: false
+  xy: 764, 36
+  size: 578, 147
+  orig: 578, 147
+  offset: 0, 0
+  index: -1
+cloud_dungeon2
+  rotate: false
+  xy: 2, 27
+  size: 760, 156
+  orig: 760, 156
+  offset: 0, 0
+  index: -1
+cloud_dungeon3
+  rotate: false
+  xy: 1283, 263
+  size: 508, 108
+  orig: 508, 108
+  offset: 0, 0
+  index: -1
+cloud_hell1
+  rotate: false
+  xy: 1344, 83
+  size: 426, 178
+  orig: 426, 178
+  offset: 0, 0
+  index: -1
+cloud_hell3
+  rotate: false
+  xy: 1772, 35
+  size: 269, 222
+  orig: 269, 222
+  offset: 0, 0
+  index: -1
+cloud_hell4
+  rotate: false
+  xy: 1707, 678
+  size: 285, 217
+  orig: 285, 217
+  offset: 0, 0
+  index: -1
+contract
+  rotate: false
+  xy: 1994, 792
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+crystal
+  rotate: false
+  xy: 2005, 1303
+  size: 38, 50
+  orig: 38, 50
+  offset: 0, 0
+  index: -1
+default_hand
+  rotate: false
+  xy: 714, 6
+  size: 18, 19
+  orig: 18, 19
+  offset: 0, 0
+  index: -1
+difficult1
+  rotate: false
+  xy: 1987, 500
+  size: 57, 69
+  orig: 57, 69
+  offset: 0, 0
+  index: -1
+difficult2
+  rotate: false
+  xy: 1987, 429
+  size: 57, 69
+  orig: 57, 69
+  offset: 0, 0
+  index: -1
+dungeon_hand
+  rotate: false
+  xy: 2009, 1084
+  size: 18, 19
+  orig: 18, 19
+  offset: 0, 0
+  index: -1
+equipment_holder
+  rotate: false
+  xy: 1797, 1828
+  size: 218, 218
+  orig: 218, 218
+  offset: 0, 0
+  index: -1
+fraction
+  rotate: false
+  xy: 2032, 1112
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+grenade
+  rotate: false
+  xy: 2009, 1157
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+grenade_skill_game
+  rotate: false
+  xy: 1972, 1539
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1
+hell_hand
+  rotate: false
+  xy: 1950, 14
+  size: 18, 19
+  orig: 18, 19
+  offset: 0, 0
+  index: -1
+hero_bar_icon
+  rotate: false
+  xy: 1284, 202
+  size: 58, 59
+  orig: 58, 59
+  offset: 0, 0
+  index: -1
+inv_boots
+  rotate: false
+  xy: 1797, 1534
+  size: 99, 72
+  orig: 99, 72
+  offset: 0, 0
+  index: -1
+joystick2
+  rotate: false
+  xy: 1283, 1220
+  size: 462, 312
+  orig: 462, 312
+  offset: 0, 0
+  index: -1
+joystick5
+  rotate: false
+  xy: 1283, 593
+  size: 422, 268
+  orig: 422, 268
+  offset: 0, 0
+  index: -1
+kachokman
+  rotate: false
+  xy: 1804, 1046
+  size: 203, 228
+  orig: 203, 228
+  offset: 0, 0
+  index: -1
+kills_icon
+  rotate: false
+  xy: 1991, 621
+  size: 55, 55
+  orig: 55, 55
+  offset: 0, 0
+  index: -1
+light0
+  rotate: false
+  xy: 1895, 377
+  size: 90, 214
+  orig: 90, 214
+  offset: 0, 0
+  index: -1
+light3
+  rotate: false
+  xy: 2005, 1396
+  size: 41, 210
+  orig: 41, 210
+  offset: 0, 0
+  index: -1
+light4
+  rotate: false
+  xy: 2017, 1912
+  size: 20, 85
+  orig: 20, 85
+  offset: 0, 0
+  index: -1
+map_mine
+  rotate: false
+  xy: 1994, 740
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+map_open
+  rotate: false
+  xy: 1994, 844
+  size: 50, 51
+  orig: 50, 51
+  offset: 0, 0
+  index: -1
+skill_dot
+  rotate: false
+  xy: 1994, 844
+  size: 50, 51
+  orig: 50, 51
+  offset: 0, 0
+  index: -1
+menu_back
+  rotate: false
+  xy: 2, 228
+  size: 1279, 864
+  orig: 1279, 864
+  offset: 0, 0
+  index: -1
+menu_battle_building
+  rotate: false
+  xy: 1645, 942
+  size: 157, 276
+  orig: 157, 276
+  offset: 0, 0
+  index: -1
+menu_front
+  rotate: false
+  xy: 2, 1094
+  size: 1279, 952
+  orig: 1279, 952
+  offset: 0, 0
+  index: -1
+menu_inapp_btn
+  rotate: false
+  xy: 1915, 593
+  size: 74, 83
+  orig: 74, 83
+  offset: 0, 0
+  index: -1
+menu_map_building
+  rotate: false
+  xy: 1283, 863
+  size: 360, 355
+  orig: 360, 355
+  offset: 0, 0
+  index: -1
+menu_road
+  rotate: false
+  xy: 2, 185
+  size: 1280, 41
+  orig: 1280, 41
+  offset: 0, 0
+  index: -1
+mine_game
+  rotate: false
+  xy: 1772, 2
+  size: 66, 31
+  orig: 66, 31
+  offset: 0, 0
+  index: -1
+move_btn
+  rotate: false
+  xy: 1283, 373
+  size: 390, 218
+  orig: 390, 218
+  offset: 0, 0
+  index: -1
+mp_bar
+  rotate: false
+  xy: 764, 18
+  size: 198, 16
+  orig: 198, 16
+  offset: 0, 0
+  index: -1
+one_bullet
+  rotate: false
+  xy: 1283, 1534
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+piece_of_brick
+  rotate: false
+  xy: 1840, 3
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+power
+  rotate: false
+  xy: 2005, 1355
+  size: 41, 39
+  orig: 41, 39
+  offset: 0, 0
+  index: -1
+wave_bar_icon
+  rotate: false
+  xy: 2005, 1355
+  size: 41, 39
+  orig: 41, 39
+  offset: 0, 0
+  index: -1
+quad
+  rotate: false
+  xy: 691, 4
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+quad_pause
+  rotate: false
+  xy: 2009, 1105
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+quality_star
+  rotate: false
+  xy: 1779, 918
+  size: 23, 22
+  orig: 23, 22
+  offset: 0, 0
+  index: -1
+spike_easy
+  rotate: false
+  xy: 2017, 1854
+  size: 26, 56
+  orig: 26, 56
+  offset: 0, 0
+  index: -1
+spike_hard
+  rotate: false
+  xy: 2017, 1796
+  size: 26, 56
+  orig: 26, 56
+  offset: 0, 0
+  index: -1
+spike_medium
+  rotate: false
+  xy: 2017, 1738
+  size: 26, 56
+  orig: 26, 56
+  offset: 0, 0
+  index: -1
+stats_holder
+  rotate: false
+  xy: 1797, 1608
+  size: 218, 218
+  orig: 218, 218
+  offset: 0, 0
+  index: -1
+stats_line
+  rotate: false
+  xy: 2017, 1699
+  size: 20, 37
+  orig: 20, 37
+  offset: 0, 0
+  index: -1
+stripe
+  rotate: false
+  xy: 1899, 7
+  size: 26, 26
+  orig: 26, 26
+  offset: 0, 0
+  index: -1
+tap_circle
+  rotate: false
+  xy: 1747, 1276
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+time_icon
+  rotate: false
+  xy: 1994, 688
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+triangle
+  rotate: false
+  xy: 2009, 1233
+  size: 36, 41
+  orig: 36, 41
+  offset: 0, 0
+  index: -1
+triangle
+  rotate: false
+  xy: 2017, 1676
+  size: 19, 21
+  orig: 19, 21
+  offset: 0, 0
+  index: 1
+uber_dot
+  rotate: false
+  xy: 1987, 377
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+upgrade_arrow
+  rotate: false
+  xy: 2017, 1999
+  size: 29, 47
+  orig: 29, 47
+  offset: 0, 0
+  index: -1
+video_reward_icon
+  rotate: false
+  xy: 1647, 19
+  size: 61, 44
+  orig: 61, 44
+  offset: 0, 0
+  index: -1
+w_grenade_launcher
+  rotate: false
+  xy: 1904, 259
+  size: 123, 116
+  orig: 123, 116
+  offset: 0, 0
+  index: -1
+w_water_pistol
+  rotate: false
+  xy: 1991, 571
+  size: 54, 48
+  orig: 54, 48
+  offset: 0, 0
+  index: -1
+wave_bar
+  rotate: false
+  xy: 1344, 65
+  size: 368, 16
+  orig: 368, 16
+  offset: 0, 0
+  index: -1
+wave_bar_empty
+  rotate: false
+  xy: 2, 3
+  size: 376, 22
+  orig: 376, 22
+  offset: 0, 0
+  index: -1
+white_arrow
+  rotate: false
+  xy: 964, 5
+  size: 120, 29
+  orig: 120, 29
+  offset: 0, 0
+  index: -1
+white_pixel
+  rotate: false
+  xy: 1086, 10
+  size: 4, 4
+  orig: 4, 4
+  offset: 0, 0
+  index: -1
+white_quad
+  rotate: false
+  xy: 1927, 12
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+win_gui_holder
+  rotate: false
+  xy: 1675, 373
+  size: 218, 218
+  orig: 218, 218
+  offset: 0, 0
+  index: -1
+
+main2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+a_bone
+  rotate: false
+  xy: 333, 591
+  size: 86, 103
+  orig: 86, 103
+  offset: 0, 0
+  index: -1
+a_cross
+  rotate: false
+  xy: 464, 492
+  size: 87, 94
+  orig: 87, 94
+  offset: 0, 0
+  index: -1
+a_crowsun
+  rotate: false
+  xy: 717, 1348
+  size: 124, 106
+  orig: 124, 106
+  offset: 0, 0
+  index: -1
+a_dollar
+  rotate: false
+  xy: 334, 261
+  size: 101, 102
+  orig: 101, 102
+  offset: 0, 0
+  index: -1
+a_dynamite
+  rotate: false
+  xy: 682, 69
+  size: 87, 89
+  orig: 87, 89
+  offset: 0, 0
+  index: -1
+a_spinner
+  rotate: false
+  xy: 532, 1076
+  size: 103, 104
+  orig: 103, 104
+  offset: 0, 0
+  index: -1
+ability_slot
+  rotate: false
+  xy: 426, 692
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+ad_icon
+  rotate: false
+  xy: 222, 1169
+  size: 192, 123
+  orig: 192, 123
+  offset: 0, 0
+  index: -1
+add_exp
+  rotate: false
+  xy: 1249, 1085
+  size: 93, 88
+  orig: 93, 88
+  offset: 0, 0
+  index: -1
+add_gold
+  rotate: false
+  xy: 587, 70
+  size: 93, 88
+  orig: 93, 88
+  offset: 0, 0
+  index: -1
+aim_ability
+  rotate: false
+  xy: 766, 256
+  size: 67, 93
+  orig: 67, 93
+  offset: 0, 0
+  index: -1
+aim_map
+  rotate: false
+  xy: 969, 987
+  size: 94, 97
+  orig: 94, 97
+  offset: 0, 0
+  index: -1
+ammo
+  rotate: false
+  xy: 250, 15
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+atk_btn
+  rotate: false
+  xy: 2, 335
+  size: 170, 166
+  orig: 170, 166
+  offset: 0, 0
+  index: -1
+b_gravityboots
+  rotate: false
+  xy: 421, 588
+  size: 128, 102
+  orig: 128, 102
+  offset: 0, 0
+  index: -1
+b_grind
+  rotate: false
+  xy: 458, 1294
+  size: 95, 76
+  orig: 95, 76
+  offset: 0, 0
+  index: -1
+b_hooves
+  rotate: false
+  xy: 1254, 1175
+  size: 86, 100
+  orig: 86, 100
+  offset: 0, 0
+  index: -1
+b_metalboots
+  rotate: false
+  xy: 556, 638
+  size: 116, 96
+  orig: 116, 96
+  offset: 0, 0
+  index: -1
+b_seaweed
+  rotate: false
+  xy: 843, 1295
+  size: 124, 100
+  orig: 124, 100
+  offset: 0, 0
+  index: -1
+b_sox
+  rotate: false
+  xy: 738, 1183
+  size: 92, 106
+  orig: 92, 106
+  offset: 0, 0
+  index: -1
+bitcoin
+  rotate: false
+  xy: 1537, 1642
+  size: 45, 45
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
+bitcoin0
+  rotate: false
+  xy: 1387, 926
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+bitcoin1kk
+  rotate: false
+  xy: 1212, 1875
+  size: 257, 171
+  orig: 257, 171
+  offset: 0, 0
+  index: -1
+bitcoin30k
+  rotate: false
+  xy: 1212, 1754
+  size: 205, 119
+  orig: 205, 119
+  offset: 0, 0
+  index: -1
+bitcoin5k
+  rotate: false
+  xy: 417, 1096
+  size: 113, 79
+  orig: 113, 79
+  offset: 0, 0
+  index: -1
+bitcoin_icon
+  rotate: false
+  xy: 717, 1456
+  size: 118, 118
+  orig: 118, 118
+  offset: 0, 0
+  index: -1
+bitcoinx2
+  rotate: false
+  xy: 1584, 1642
+  size: 45, 45
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
+bonus_dot
+  rotate: false
+  xy: 944, 364
+  size: 57, 52
+  orig: 57, 52
+  offset: 0, 0
+  index: -1
+map_bonus
+  rotate: false
+  xy: 944, 364
+  size: 57, 52
+  orig: 57, 52
+  offset: 0, 0
+  index: -1
+boss_frame
+  rotate: false
+  xy: 871, 988
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+brick
+  rotate: false
+  xy: 1232, 951
+  size: 58, 35
+  orig: 58, 35
+  offset: 0, 0
+  index: -1
+capture1
+  rotate: false
+  xy: 1458, 1389
+  size: 72, 72
+  orig: 72, 72
+  offset: 0, 0
+  index: -1
+capture2
+  rotate: false
+  xy: 1532, 1389
+  size: 72, 72
+  orig: 72, 72
+  offset: 0, 0
+  index: -1
+capture3
+  rotate: false
+  xy: 1458, 1315
+  size: 72, 72
+  orig: 72, 72
+  offset: 0, 0
+  index: -1
+cell_round
+  rotate: false
+  xy: 1150, 988
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+checkbox_off
+  rotate: false
+  xy: 1375, 1692
+  size: 150, 60
+  orig: 150, 60
+  offset: 0, 0
+  index: -1
+checkbox_on
+  rotate: false
+  xy: 1667, 1732
+  size: 150, 60
+  orig: 150, 60
+  offset: 0, 0
+  index: -1
+close_btn
+  rotate: false
+  xy: 1099, 919
+  size: 67, 67
+  orig: 67, 67
+  offset: 0, 0
+  index: -1
+cloud2
+  rotate: false
+  xy: 174, 307
+  size: 158, 56
+  orig: 158, 56
+  offset: 0, 0
+  index: -1
+cloud3
+  rotate: false
+  xy: 679, 1291
+  size: 140, 55
+  orig: 140, 55
+  offset: 0, 0
+  index: -1
+cloud_city1
+  rotate: false
+  xy: 199, 492
+  size: 167, 74
+  orig: 167, 74
+  offset: 0, 0
+  index: -1
+cloud_city2
+  rotate: false
+  xy: 895, 1934
+  size: 315, 112
+  orig: 315, 112
+  offset: 0, 0
+  index: -1
+cloud_dungeon1
+  rotate: false
+  xy: 524, 1961
+  size: 369, 85
+  orig: 369, 85
+  offset: 0, 0
+  index: -1
+cloud_hell2
+  rotate: false
+  xy: 841, 1674
+  size: 205, 133
+  orig: 205, 133
+  offset: 0, 0
+  index: -1
+common_chest
+  rotate: false
+  xy: 637, 1076
+  size: 106, 85
+  orig: 106, 85
+  offset: 0, 0
+  index: -1
+common_key
+  rotate: false
+  xy: 1344, 1118
+  size: 82, 74
+  orig: 82, 74
+  offset: 0, 0
+  index: -1
+cooldown
+  rotate: false
+  xy: 787, 503
+  size: 93, 88
+  orig: 93, 88
+  offset: 0, 0
+  index: -1
+critical_strike
+  rotate: false
+  xy: 882, 506
+  size: 93, 88
+  orig: 93, 88
+  offset: 0, 0
+  index: -1
+defense
+  rotate: false
+  xy: 771, 68
+  size: 81, 90
+  orig: 81, 90
+  offset: 0, 0
+  index: -1
+delayer_look_off
+  rotate: false
+  xy: 969, 1394
+  size: 111, 111
+  orig: 111, 111
+  offset: 0, 0
+  index: -1
+delayer_look_on
+  rotate: false
+  xy: 1082, 1394
+  size: 112, 112
+  orig: 112, 112
+  offset: 0, 0
+  index: -1
+dif_squad
+  rotate: false
+  xy: 1413, 1463
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+dif_squad_selected
+  rotate: false
+  xy: 1489, 1463
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+difficult3
+  rotate: false
+  xy: 1759, 1661
+  size: 57, 69
+  orig: 57, 69
+  offset: 0, 0
+  index: -1
+discount10
+  rotate: false
+  xy: 1310, 1361
+  size: 83, 82
+  orig: 83, 82
+  offset: 0, 0
+  index: -1
+diskette
+  rotate: false
+  xy: 1308, 1277
+  size: 82, 82
+  orig: 82, 82
+  offset: 0, 0
+  index: -1
+dodge
+  rotate: false
+  xy: 1150, 1086
+  size: 97, 88
+  orig: 97, 88
+  offset: 0, 0
+  index: -1
+dron_skill
+  rotate: false
+  xy: 1345, 972
+  size: 82, 68
+  orig: 82, 68
+  offset: 0, 0
+  index: -1
+elite_chest
+  rotate: false
+  xy: 261, 696
+  size: 163, 100
+  orig: 163, 100
+  offset: 0, 0
+  index: -1
+exp_icon
+  rotate: false
+  xy: 837, 1507
+  size: 118, 118
+  orig: 118, 118
+  offset: 0, 0
+  index: -1
+fb
+  rotate: false
+  xy: 368, 492
+  size: 94, 94
+  orig: 94, 94
+  offset: 0, 0
+  index: -1
+firerate
+  rotate: false
+  xy: 1495, 1650
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+gear
+  rotate: false
+  xy: 1532, 1318
+  size: 67, 69
+  orig: 67, 69
+  offset: 0, 0
+  index: -1
+goblet
+  rotate: false
+  xy: 863, 2
+  size: 74, 75
+  orig: 74, 75
+  offset: 0, 0
+  index: -1
+green_plus
+  rotate: false
+  xy: 292, 2
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+grenade_skill
+  rotate: false
+  xy: 939, 181
+  size: 82, 85
+  orig: 82, 85
+  offset: 0, 0
+  index: -1
+gui_back
+  rotate: false
+  xy: 1413, 1539
+  size: 93, 93
+  orig: 93, 93
+  offset: 0, 0
+  index: -1
+gui_back_new
+  rotate: false
+  xy: 263, 1372
+  size: 216, 216
+  orig: 216, 216
+  offset: 0, 0
+  index: -1
+h_armyhelmet
+  rotate: false
+  xy: 780, 439
+  size: 93, 62
+  orig: 93, 62
+  offset: 0, 0
+  index: -1
+h_flamehat
+  rotate: false
+  xy: 685, 973
+  size: 96, 100
+  orig: 96, 100
+  offset: 0, 0
+  index: -1
+h_horse
+  rotate: false
+  xy: 1049, 1176
+  size: 102, 99
+  orig: 102, 99
+  offset: 0, 0
+  index: -1
+h_mask
+  rotate: false
+  xy: 833, 873
+  size: 76, 96
+  orig: 76, 96
+  offset: 0, 0
+  index: -1
+h_seahat
+  rotate: false
+  xy: 635, 853
+  size: 98, 111
+  orig: 98, 111
+  offset: 0, 0
+  index: -1
+h_starhat
+  rotate: false
+  xy: 1095, 1277
+  size: 102, 115
+  orig: 102, 115
+  offset: 0, 0
+  index: -1
+h_suckinghelmet
+  rotate: false
+  xy: 761, 1634
+  size: 78, 111
+  orig: 78, 111
+  offset: 0, 0
+  index: -1
+handling_my
+  rotate: false
+  xy: 1471, 1882
+  size: 246, 164
+  orig: 246, 164
+  offset: 0, 0
+  index: -1
+hash_icon
+  rotate: false
+  xy: 957, 1507
+  size: 118, 118
+  orig: 118, 118
+  offset: 0, 0
+  index: -1
+hash_purchase0
+  rotate: false
+  xy: 1819, 1706
+  size: 127, 58
+  orig: 127, 58
+  offset: 0, 0
+  index: -1
+hash_purchase1
+  rotate: false
+  xy: 1667, 1794
+  size: 158, 86
+  orig: 158, 86
+  offset: 0, 0
+  index: -1
+hash_purchase2
+  rotate: false
+  xy: 841, 1809
+  size: 243, 123
+  orig: 243, 123
+  offset: 0, 0
+  index: -1
+hash_purchase3
+  rotate: false
+  xy: 524, 1576
+  size: 235, 165
+  orig: 235, 165
+  offset: 0, 0
+  index: -1
+headshot
+  rotate: false
+  xy: 844, 169
+  size: 93, 88
+  orig: 93, 88
+  offset: 0, 0
+  index: -1
+hero_head_ending
+  rotate: false
+  xy: 1048, 1676
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+home_btn
+  rotate: false
+  xy: 2, 1819
+  size: 259, 227
+  orig: 259, 227
+  offset: 0, 0
+  index: -1
+hp_recovery
+  rotate: false
+  xy: 623, 2
+  size: 78, 64
+  orig: 78, 64
+  offset: 0, 0
+  index: -1
+inv_amulet
+  rotate: false
+  xy: 581, 166
+  size: 70, 94
+  orig: 70, 94
+  offset: 0, 0
+  index: -1
+inv_helmet
+  rotate: false
+  xy: 1929, 1629
+  size: 97, 62
+  orig: 97, 62
+  offset: 0, 0
+  index: -1
+inv_pet
+  rotate: false
+  xy: 745, 1075
+  size: 100, 106
+  orig: 100, 106
+  offset: 0, 0
+  index: -1
+inv_ring
+  rotate: false
+  xy: 491, 2
+  size: 66, 66
+  orig: 66, 66
+  offset: 0, 0
+  index: -1
+inv_weapon
+  rotate: false
+  xy: 637, 1163
+  size: 99, 109
+  orig: 99, 109
+  offset: 0, 0
+  index: -1
+items_btn
+  rotate: false
+  xy: 874, 780
+  size: 77, 91
+  orig: 77, 91
+  offset: 0, 0
+  index: -1
+joystick_circle
+  rotate: false
+  xy: 2, 173
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+joystick_quad
+  rotate: false
+  xy: 960, 917
+  size: 68, 68
+  orig: 68, 68
+  offset: 0, 0
+  index: -1
+jump_btn
+  rotate: false
+  xy: 2, 11
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+kryogrenade_skill
+  rotate: false
+  xy: 752, 160
+  size: 90, 89
+  orig: 90, 89
+  offset: 0, 0
+  index: -1
+kryogrenade_skill_game
+  rotate: false
+  xy: 959, 871
+  size: 43, 44
+  orig: 43, 44
+  offset: 0, 0
+  index: -1
+light1
+  rotate: false
+  xy: 171, 708
+  size: 88, 214
+  orig: 88, 214
+  offset: 0, 0
+  index: -1
+light2
+  rotate: false
+  xy: 742, 1747
+  size: 97, 212
+  orig: 97, 212
+  offset: 0, 0
+  index: -1
+lock
+  rotate: false
+  xy: 1395, 1367
+  size: 61, 76
+  orig: 61, 76
+  offset: 0, 0
+  index: -1
+loupe
+  rotate: false
+  xy: 1030, 916
+  size: 67, 69
+  orig: 67, 69
+  offset: 0, 0
+  index: -1
+map_boss
+  rotate: false
+  xy: 402, 2
+  size: 79, 54
+  orig: 79, 54
+  offset: 0, 0
+  index: -1
+max_health
+  rotate: false
+  xy: 703, 2
+  size: 78, 64
+  orig: 78, 64
+  offset: 0, 0
+  index: -1
+max_mana
+  rotate: false
+  xy: 783, 2
+  size: 78, 64
+  orig: 78, 64
+  offset: 0, 0
+  index: -1
+menu_abilities_btn
+  rotate: false
+  xy: 783, 685
+  size: 89, 91
+  orig: 89, 91
+  offset: 0, 0
+  index: -1
+menu_achievements_btn
+  rotate: false
+  xy: 669, 351
+  size: 121, 77
+  orig: 121, 77
+  offset: 0, 0
+  index: -1
+menu_avatar
+  rotate: false
+  xy: 671, 532
+  size: 114, 99
+  orig: 114, 99
+  offset: 0, 0
+  index: -1
+menu_backpack_btn
+  rotate: false
+  xy: 674, 633
+  size: 107, 105
+  orig: 107, 105
+  offset: 0, 0
+  index: -1
+menu_battle_btn
+  rotate: false
+  xy: 1314, 1524
+  size: 97, 105
+  orig: 97, 105
+  offset: 0, 0
+  index: -1
+menu_chest_btn
+  rotate: false
+  xy: 437, 262
+  size: 107, 105
+  orig: 107, 105
+  offset: 0, 0
+  index: -1
+menu_gold_label
+  rotate: false
+  xy: 841, 1627
+  size: 214, 45
+  orig: 214, 45
+  offset: 0, 0
+  index: -1
+menu_hash_label
+  rotate: false
+  xy: 1057, 1628
+  size: 205, 46
+  orig: 205, 46
+  offset: 0, 0
+  index: -1
+menu_hell_btn
+  rotate: false
+  xy: 1956, 1787
+  size: 90, 93
+  orig: 90, 93
+  offset: 0, 0
+  index: -1
+menu_hell_building
+  rotate: false
+  xy: 2, 677
+  size: 167, 245
+  orig: 167, 245
+  offset: 0, 0
+  index: -1
+menu_login_reward_btn
+  rotate: false
+  xy: 521, 1182
+  size: 114, 90
+  orig: 114, 90
+  offset: 0, 0
+  index: -1
+menu_map_btn
+  rotate: false
+  xy: 261, 798
+  size: 136, 140
+  orig: 136, 140
+  offset: 0, 0
+  index: -1
+menu_missions_btn
+  rotate: false
+  xy: 874, 687
+  size: 89, 91
+  orig: 89, 91
+  offset: 0, 0
+  index: -1
+menu_online_btn
+  rotate: false
+  xy: 2, 924
+  size: 213, 215
+  orig: 213, 215
+  offset: 0, 0
+  index: -1
+menu_options_btn
+  rotate: false
+  xy: 293, 154
+  size: 107, 105
+  orig: 107, 105
+  offset: 0, 0
+  index: -1
+menu_save_btn
+  rotate: false
+  xy: 1967, 1883
+  size: 79, 79
+  orig: 79, 79
+  offset: 0, 0
+  index: -1
+menu_shop_btn
+  rotate: false
+  xy: 481, 1377
+  size: 234, 197
+  orig: 234, 197
+  offset: 0, 0
+  index: -1
+menu_skills_btn
+  rotate: false
+  xy: 783, 778
+  size: 89, 93
+  orig: 89, 93
+  offset: 0, 0
+  index: -1
+mine_skill
+  rotate: false
+  xy: 1375, 1634
+  size: 118, 56
+  orig: 118, 56
+  offset: 0, 0
+  index: -1
+next_wave1_btn
+  rotate: false
+  xy: 2, 1590
+  size: 259, 227
+  orig: 259, 227
+  offset: 0, 0
+  index: -1
+next_wave5_btn
+  rotate: false
+  xy: 263, 1819
+  size: 259, 227
+  orig: 259, 227
+  offset: 0, 0
+  index: -1
+noads_icon
+  rotate: false
+  xy: 787, 593
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+options_btn
+  rotate: false
+  xy: 293, 47
+  size: 107, 105
+  orig: 107, 105
+  offset: 0, 0
+  index: -1
+p_caty
+  rotate: false
+  xy: 526, 850
+  size: 107, 114
+  orig: 107, 114
+  offset: 0, 0
+  index: -1
+p_crangy
+  rotate: false
+  xy: 555, 1274
+  size: 122, 101
+  orig: 122, 101
+  offset: 0, 0
+  index: -1
+p_pooka
+  rotate: false
+  xy: 847, 1086
+  size: 88, 100
+  orig: 88, 100
+  offset: 0, 0
+  index: -1
+p_roby
+  rotate: false
+  xy: 937, 1086
+  size: 105, 92
+  orig: 105, 92
+  offset: 0, 0
+  index: -1
+p_rogalik
+  rotate: false
+  xy: 670, 430
+  size: 108, 100
+  orig: 108, 100
+  offset: 0, 0
+  index: -1
+p_skelety
+  rotate: false
+  xy: 783, 971
+  size: 86, 102
+  orig: 86, 102
+  offset: 0, 0
+  index: -1
+pause_btn
+  rotate: false
+  xy: 1967, 1964
+  size: 79, 82
+  orig: 79, 82
+  offset: 0, 0
+  index: -1
+pedia_btn
+  rotate: false
+  xy: 832, 1188
+  size: 107, 105
+  orig: 107, 105
+  offset: 0, 0
+  index: -1
+pistols_atk
+  rotate: false
+  xy: 1044, 1087
+  size: 104, 87
+  orig: 104, 87
+  offset: 0, 0
+  index: -1
+ps_skill_label
+  rotate: false
+  xy: 1264, 1631
+  size: 102, 43
+  orig: 102, 43
+  offset: 0, 0
+  index: -1
+question_circle
+  rotate: false
+  xy: 337, 3
+  size: 42, 42
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
+r_firering
+  rotate: false
+  xy: 835, 259
+  size: 69, 90
+  orig: 69, 90
+  offset: 0, 0
+  index: -1
+r_lighttube
+  rotate: false
+  xy: 1077, 1508
+  size: 116, 118
+  orig: 116, 118
+  offset: 0, 0
+  index: -1
+r_moon_ring
+  rotate: false
+  xy: 1065, 988
+  size: 83, 97
+  orig: 83, 97
+  offset: 0, 0
+  index: -1
+r_plastic
+  rotate: false
+  xy: 792, 351
+  size: 88, 86
+  orig: 88, 86
+  offset: 0, 0
+  index: -1
+r_searing
+  rotate: false
+  xy: 416, 1177
+  size: 103, 115
+  orig: 103, 115
+  offset: 0, 0
+  index: -1
+r_skulring
+  rotate: false
+  xy: 402, 58
+  size: 87, 96
+  orig: 87, 96
+  offset: 0, 0
+  index: -1
+r_watches
+  rotate: false
+  xy: 653, 160
+  size: 97, 89
+  orig: 97, 89
+  offset: 0, 0
+  index: -1
+rank0
+  rotate: false
+  xy: 558, 361
+  size: 109, 69
+  orig: 109, 69
+  offset: 0, 0
+  index: -1
+rank1
+  rotate: false
+  xy: 1537, 1689
+  size: 109, 69
+  orig: 109, 69
+  offset: 0, 0
+  index: -1
+rank2
+  rotate: false
+  xy: 1648, 1661
+  size: 109, 69
+  orig: 109, 69
+  offset: 0, 0
+  index: -1
+rank3
+  rotate: false
+  xy: 1818, 1635
+  size: 109, 69
+  orig: 109, 69
+  offset: 0, 0
+  index: -1
+rare_key
+  rotate: false
+  xy: 1345, 1042
+  size: 82, 74
+  orig: 82, 74
+  offset: 0, 0
+  index: -1
+real_money
+  rotate: false
+  xy: 879, 596
+  size: 90, 89
+  orig: 90, 89
+  offset: 0, 0
+  index: -1
+recharge_time
+  rotate: false
+  xy: 1956, 1693
+  size: 90, 92
+  orig: 90, 92
+  offset: 0, 0
+  index: -1
+reload
+  rotate: false
+  xy: 1196, 1395
+  size: 112, 112
+  orig: 112, 112
+  offset: 0, 0
+  index: -1
+ressurect_btn
+  rotate: false
+  xy: 2, 1361
+  size: 259, 227
+  orig: 259, 227
+  offset: 0, 0
+  index: -1
+ressurect_button
+  rotate: false
+  xy: 2, 503
+  size: 195, 172
+  orig: 195, 172
+  offset: 0, 0
+  index: -1
+restart_btn
+  rotate: false
+  xy: 263, 1590
+  size: 259, 227
+  orig: 259, 227
+  offset: 0, 0
+  index: -1
+reward_cell
+  rotate: false
+  xy: 199, 568
+  size: 132, 126
+  orig: 132, 126
+  offset: 0, 0
+  index: -1
+rifles_atk
+  rotate: false
+  xy: 546, 262
+  size: 108, 97
+  orig: 108, 97
+  offset: 0, 0
+  index: -1
+rocket
+  rotate: false
+  xy: 164, 19
+  size: 84, 36
+  orig: 84, 36
+  offset: 0, 0
+  index: -1
+scroll_knob
+  rotate: false
+  xy: 906, 268
+  size: 86, 86
+  orig: 86, 86
+  offset: 0, 0
+  index: -1
+sell_btn
+  rotate: false
+  xy: 1180, 1676
+  size: 193, 76
+  orig: 193, 76
+  offset: 0, 0
+  index: -1
+settings_btn
+  rotate: false
+  xy: 263, 1294
+  size: 193, 76
+  orig: 193, 76
+  offset: 0, 0
+  index: -1
+skill_btn
+  rotate: false
+  xy: 670, 740
+  size: 111, 111
+  orig: 111, 111
+  offset: 0, 0
+  index: -1
+skill_lock
+  rotate: false
+  xy: 606, 966
+  size: 77, 108
+  orig: 77, 108
+  offset: 0, 0
+  index: -1
+skill_slot
+  rotate: false
+  xy: 1195, 1509
+  size: 117, 117
+  orig: 117, 117
+  offset: 0, 0
+  index: -1
+slider_back
+  rotate: false
+  xy: 945, 94
+  size: 85, 85
+  orig: 85, 85
+  offset: 0, 0
+  index: -1
+smile
+  rotate: false
+  xy: 1248, 988
+  size: 95, 95
+  orig: 95, 95
+  offset: 0, 0
+  index: -1
+strike_time
+  rotate: false
+  xy: 656, 251
+  size: 108, 98
+  orig: 108, 98
+  offset: 0, 0
+  index: -1
+strike_weapons_atk
+  rotate: false
+  xy: 735, 874
+  size: 96, 95
+  orig: 96, 95
+  offset: 0, 0
+  index: -1
+stripe_holder
+  rotate: false
+  xy: 1342, 1194
+  size: 81, 81
+  orig: 81, 81
+  offset: 0, 0
+  index: -1
+swallow
+  rotate: false
+  xy: 559, 2
+  size: 62, 66
+  orig: 62, 66
+  offset: 0, 0
+  index: -1
+swipe_btn
+  rotate: false
+  xy: 556, 736
+  size: 112, 112
+  orig: 112, 112
+  offset: 0, 0
+  index: -1
+teleport_skill
+  rotate: false
+  xy: 945, 24
+  size: 82, 68
+  orig: 82, 68
+  offset: 0, 0
+  index: -1
+time_reward
+  rotate: false
+  xy: 854, 79
+  size: 89, 88
+  orig: 89, 88
+  offset: 0, 0
+  index: -1
+tutor_arrow
+  rotate: false
+  xy: 882, 418
+  size: 94, 86
+  orig: 94, 86
+  offset: 0, 0
+  index: -1
+ui_site
+  rotate: false
+  xy: 485, 166
+  size: 94, 94
+  orig: 94, 94
+  offset: 0, 0
+  index: -1
+upgrade_btn
+  rotate: false
+  xy: 222, 1091
+  size: 193, 76
+  orig: 193, 76
+  offset: 0, 0
+  index: -1
+upgrading
+  rotate: false
+  xy: 911, 891
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+upgrading_back
+  rotate: false
+  xy: 1232, 904
+  size: 46, 45
+  orig: 46, 45
+  offset: 0, 0
+  index: -1
+vk
+  rotate: false
+  xy: 491, 70
+  size: 94, 94
+  orig: 94, 94
+  offset: 0, 0
+  index: -1
+w_autopistol
+  rotate: false
+  xy: 941, 1180
+  size: 106, 105
+  orig: 106, 105
+  offset: 0, 0
+  index: -1
+w_autorifle
+  rotate: false
+  xy: 164, 182
+  size: 127, 123
+  orig: 127, 123
+  offset: 0, 0
+  index: -1
+w_autorifle_i
+  rotate: false
+  xy: 304, 365
+  size: 127, 125
+  orig: 127, 125
+  offset: 0, 0
+  index: -1
+w_autoshotgun
+  rotate: false
+  xy: 1086, 1808
+  size: 124, 124
+  orig: 124, 124
+  offset: 0, 0
+  index: -1
+w_bone_bow
+  rotate: false
+  xy: 402, 156
+  size: 81, 103
+  orig: 81, 103
+  offset: 0, 0
+  index: -1
+w_bow
+  rotate: false
+  xy: 366, 954
+  size: 117, 135
+  orig: 117, 135
+  offset: 0, 0
+  index: -1
+w_breadrang
+  rotate: false
+  xy: 217, 940
+  size: 147, 149
+  orig: 147, 149
+  offset: 0, 0
+  index: -1
+w_bubpistol
+  rotate: false
+  xy: 1419, 1754
+  size: 116, 119
+  orig: 116, 119
+  offset: 0, 0
+  index: -1
+w_fireglove
+  rotate: false
+  xy: 1314, 1445
+  size: 92, 77
+  orig: 92, 77
+  offset: 0, 0
+  index: -1
+w_laser
+  rotate: false
+  xy: 553, 537
+  size: 116, 99
+  orig: 116, 99
+  offset: 0, 0
+  index: -1
+w_lightning_gun
+  rotate: false
+  xy: 1827, 1766
+  size: 127, 114
+  orig: 127, 114
+  offset: 0, 0
+  index: -1
+w_minigun
+  rotate: false
+  xy: 174, 365
+  size: 128, 125
+  orig: 128, 125
+  offset: 0, 0
+  index: -1
+w_noobgun
+  rotate: false
+  xy: 433, 369
+  size: 123, 121
+  orig: 123, 121
+  offset: 0, 0
+  index: -1
+w_plazma_pistol
+  rotate: false
+  xy: 1199, 1277
+  size: 107, 116
+  orig: 107, 116
+  offset: 0, 0
+  index: -1
+w_plazma_rifle
+  rotate: false
+  xy: 969, 1287
+  size: 124, 105
+  orig: 124, 105
+  offset: 0, 0
+  index: -1
+w_raitng_icon
+  rotate: false
+  xy: 911, 939
+  size: 47, 47
+  orig: 47, 47
+  offset: 0, 0
+  index: -1
+w_rocket_launcher
+  rotate: false
+  xy: 843, 1397
+  size: 124, 108
+  orig: 124, 108
+  offset: 0, 0
+  index: -1
+w_scar
+  rotate: false
+  xy: 1537, 1760
+  size: 128, 120
+  orig: 128, 120
+  offset: 0, 0
+  index: -1
+w_shuriken
+  rotate: false
+  xy: 164, 57
+  size: 127, 123
+  orig: 127, 123
+  offset: 0, 0
+  index: -1
+w_slingshot
+  rotate: false
+  xy: 1168, 912
+  size: 62, 74
+  orig: 62, 74
+  offset: 0, 0
+  index: -1
+w_sniper_rifle
+  rotate: false
+  xy: 399, 822
+  size: 125, 130
+  orig: 125, 130
+  offset: 0, 0
+  index: -1
+w_vektor
+  rotate: false
+  xy: 485, 966
+  size: 119, 108
+  orig: 119, 108
+  offset: 0, 0
+  index: -1
+w_viktor
+  rotate: false
+  xy: 558, 432
+  size: 110, 103
+  orig: 110, 103
+  offset: 0, 0
+  index: -1
+weapons_tab
+  rotate: false
+  xy: 761, 1580
+  size: 67, 52
+  orig: 67, 52
+  offset: 0, 0
+  index: -1
+white_circle
+  rotate: false
+  xy: 1292, 940
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+white_glow_frame
+  rotate: false
+  xy: 882, 356
+  size: 60, 60
+  orig: 60, 60
+  offset: 0, 0
+  index: -1
+win_gui_holder_bottom
+  rotate: false
+  xy: 2, 1141
+  size: 218, 218
+  orig: 218, 218
+  offset: 0, 0
+  index: -1
+win_gui_holder_right
+  rotate: false
+  xy: 524, 1743
+  size: 216, 216
+  orig: 216, 216
+  offset: 0, 0
+  index: -1
+wings_handling
+  rotate: false
+  xy: 1719, 1882
+  size: 246, 164
+  orig: 246, 164
+  offset: 0, 0
+  index: -1
+xp
+  rotate: false
+  xy: 1340, 925
+  size: 45, 45
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
+youtube
+  rotate: false
+  xy: 1153, 1176
+  size: 99, 99
+  orig: 99, 99
+  offset: 0, 0
+  index: -1

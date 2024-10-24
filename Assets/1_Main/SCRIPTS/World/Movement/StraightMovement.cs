@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 
-public class StraightMovement : MyBehaviour
+public class StraightMovement : BaseMovement
 {
-    [SerializeField] protected float speed = 1;
-    private void FixedUpdate() {
+    public override void MoveScheme()
+    {
         this.transform.parent.position += this.transform.up * speed * Time.deltaTime;    
+    }
+    private void FixedUpdate() {
+        this.MoveScheme();
     }
 }

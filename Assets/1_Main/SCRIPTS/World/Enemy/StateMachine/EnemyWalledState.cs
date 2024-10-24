@@ -18,19 +18,29 @@ public class EnemyWalledState : EnemyState
         Debug.Log(enemy.transform.name + " Enter WalledState");
         curindex = 0;
         shortestpath =  new List<Vector2Int>();
-        shortestpath = AstarAlgorthm.FindPath(new Vector2Int((int)enemy.transform.position.x,(int)enemy.transform.position.y),
-        new Vector2Int((int)enemy.TarGet.transform.position.x,(int)enemy.TarGet.transform.position.y),enemy.RoomHolder.FloorPositions);
+        Vector2Int Targetposition = new Vector2Int((int)enemy.TarGet.transform.position.x,(int)enemy.TarGet.transform.position.y);
+        shortestpath = AstarAlgorthm.FindPath(new Vector2Int((int)enemy.transform.position.x,(int)enemy.transform.position.y),Targetposition,enemy.RoomHolder.FloorPositions);
+        if(shortestpath == null)
+        {
+            foreach(var ele in Direction2D.eightDirectionsList) {
+                shortestpath = AstarAlgorthm.FindPath(new Vector2Int((int)enemy.transform.position.x,(int)enemy.transform.position.y),Targetposition + ele,enemy.RoomHolder.FloorPositions);
+                if(shortestpath != null) break;
+            }
+        }
         if(shortestpath == null) 
         {
             enemy.StateMachine.ChangeSate(enemy.WanderingState);
             return;
         }
-        enemy.Isdetecting = true;
     }
     public override void FrameUpdate()
     {
         base.FrameUpdate();
-        if(curindex >= shortestpath.Count) EnterState();
+        if(curindex >= shortestpath.Count) 
+        {
+            Debug.Log("Done");
+            EnterState();
+        }
         enemy.Movement.MovetoPosition(new Vector3(shortestpath[curindex].x + 0.5f,shortestpath[curindex].y + 0.5f));
         float offset = enemy.Movement.Speed * Time.deltaTime *2f;
         if(enemy.transform.position.x > shortestpath[curindex].x + 0.5f - offset && enemy.transform.position.x  < shortestpath[curindex].x + 0.5f + offset

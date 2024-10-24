@@ -9,6 +9,6 @@ public class NormalSword : Sword
         base.AttackScheme();
         Quaternion quaternion = Quaternion.LookRotation(this.transform.forward,this.transform.up);
         Transform attack =  WeaponAttackSpawner.Instance.Spawn("MeleeAttack",this.transform.position,quaternion);
-        attack.GetComponent<CharacterDealer>().Dame = this.dame;
+        attack.GetComponent<PlayerDealer>().Dame = this.dame;
     }
 }

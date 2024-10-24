@@ -6,9 +6,9 @@ public class HpPotion : BaseItem
 {
     [SerializeField] protected float amountofHP;
     public float AmountofHP {get {return amountofHP;} set {amountofHP = value;}}
-    public override void OnCollect(BaseCharacter character)
+    public override void OnCollect(Player player)
     {
-        base.OnCollect(character);
-        character.Reciver.IcrHP(amountofHP);
+        base.OnCollect(player);
+        player.Reciver.IcrHP(amountofHP);
     }
 }

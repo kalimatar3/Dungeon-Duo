@@ -10,7 +10,7 @@ public abstract class Sword : Weapon
         this.StartCoroutine(this.SwingModel(180,0.1f));
     }
     protected IEnumerator SwingModel(float angle, float duration)
-        {
+    {
             this.model.transform.localPosition = new Vector3(0,0.5f,0);
             int sign = 0;
             if(this.transform.up.y >= 0) {
@@ -30,8 +30,13 @@ public abstract class Sword : Weapon
 
                 transform.rotation = Quaternion.Lerp(startRotation, endRotation, t);
 
-                yield return new WaitForSeconds(Time.deltaTime *1f);
+                yield return new WaitForFixedUpdate();
             }
             transform.localRotation = Quaternion.Euler(0,0,0);
-        }
+    }
+    public override void OnEquip(Player player)
+    {
+        base.OnEquip(player);
+        this.model.transform.localPosition = new Vector3(0,0.5f,0);
+    }
 }

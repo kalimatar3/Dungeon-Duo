@@ -8,7 +8,6 @@ public class SimpleRandomWalkDungeonGenerator : DungeonGenerator
         HashSet<Vector2Int> floorPostions = RunRandomWalk(this.dungeonGenaratorparameter,StartPosition);
         tilemapVisualizer.Clear();
         tilemapVisualizer.PaintFloorTiles(floorPostions);
-       // WallGenerator.CreateWalls(floorPostions,tilemapVisualizer);
     }
     protected HashSet<Vector2Int> RunRandomWalk(DungeonGenaratorSO parameters, Vector2Int position)
     {

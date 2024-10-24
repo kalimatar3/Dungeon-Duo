@@ -11,8 +11,8 @@ public class RoomCloseState : RoomState
     public override void EnterState()
     {
         base.EnterState();
+        this.room.CurstateName = "CloseState";
         foreach(var ele in room.ListGate) {
-            ele.CanOpen  = false;
             ele.Close();
         }
         if(room.GetComponent<FightRoom>())

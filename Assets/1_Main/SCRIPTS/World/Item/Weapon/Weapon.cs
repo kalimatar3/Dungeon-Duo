@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 public abstract class Weapon : BaseItem
 {
@@ -21,11 +22,29 @@ public abstract class Weapon : BaseItem
         this.range = SO.Range;
     }
     public abstract void AttackScheme();
-    public override void OnCollect(BaseCharacter character)
+    public virtual void OnEquip(Player player) {
+        this.transform.parent = player.Hand;
+        this.model.transform.DOKill();
+        this.transform.localPosition = Vector3.zero;
+        this.model.gameObject.SetActive(true);
+        this.transform.localRotation = Quaternion.Euler(0,0,0);   
+       
+    }
+    public override void OnInteract(Player player)
+    {
+        base.OnInteract(player);
+        if(!player) return;
+        player.GetComponent<Player>().Equipment.CollectWeapon(this);    
+        player.GetComponent<Player>().Equipment.EquipWeapon();
+    }
+    public override void OnCollect(Player character)
     {
         base.OnCollect(character);
-        if(!(Player)character) return;
-        character.GetComponent<Player>().Equipment.EquipWeapon(this);
-        character.GetComponent<Player>().Weapon = character.GetComponent<Player>().Equipment.Weapons.Peek();
+        this.transform.parent = character.Equipment.transform;
+        this.model.transform.localPosition = Vector3.zero;
+        this.transform.localPosition = Vector3.zero;
+        this.model.gameObject.SetActive(false);
+        this.Box.enabled = false;
+
     }
 }

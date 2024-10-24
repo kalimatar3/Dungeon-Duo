@@ -21,6 +21,7 @@ public abstract class Enemy : MyBehaviour,IDespawnable
     [SerializeField] protected bool isdetecting;
     [Header("Components")]
     [Space(5f)]
+    [SerializeField] protected Rigidbody2D body;
     [SerializeField] protected Room roomholder;
     [SerializeField] protected EnemyMovement movement;
     [SerializeField] protected EnemyReciver reciver;
@@ -56,15 +57,20 @@ public abstract class Enemy : MyBehaviour,IDespawnable
     public EnemyReciver Reciver {get {return reciver;}}
     public Room RoomHolder {get {return roomholder;} set {roomholder = value;}}
     public EnemySO SO {get {return enemySO;}}
+    public Rigidbody2D Body {get {return body;}}
     #endregion
     #region Loadcomponents
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadReciver();
+        this.Loadbody();
         this.LoadCharacterCheck();
         this.loadMovement();
         this.LoadData();
+    }
+    protected void Loadbody() {
+        this.body = GetComponent<Rigidbody2D>();
     }
     protected void LoadData() {
         this.firerate = enemySO.FireRate;
@@ -133,6 +139,7 @@ public abstract class Enemy : MyBehaviour,IDespawnable
     }
     public void DeSpawn()
     {
+        this.reciver.StopAllCoroutines();
         EnemySpawner.Instance.DeSpawnToPool(this.transform);
     }
 }

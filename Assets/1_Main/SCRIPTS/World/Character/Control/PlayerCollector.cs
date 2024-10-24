@@ -11,7 +11,6 @@ public class PlayerCollector : MyBehaviour
     [SerializeField] protected Iinteractable listInteractable;
     public Iinteractable ListInteractable {get {return listInteractable;}}
     public bool IScheck {get {return isCheck;}}
-    public string Name;
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -26,9 +25,10 @@ public class PlayerCollector : MyBehaviour
         this.box.isTrigger = true;
     }
     protected void FixedUpdate() {
-        if(listInteractable != null)
-        this.Name = listInteractable.GetTransform().name;
-        if(ListInteractable != null) isCheck = true;
+        if(ListInteractable != null) 
+        {
+            isCheck = true;
+        }
         else isCheck = false;
     }
     private void OnTriggerStay2D(Collider2D other) {

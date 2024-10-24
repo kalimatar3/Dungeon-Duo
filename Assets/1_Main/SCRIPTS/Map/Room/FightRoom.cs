@@ -1,17 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 
 public class FightRoom : Room
 {
     [SerializeField] protected List<Enemy> listenemy;
-    protected RoomAccesedState accesedState;
     public List<Enemy> ListEnemy {get {return listenemy;}}
-    protected override void Awake()
-    {
-        base.Awake();
-        accesedState = new RoomAccesedState(statemachine,this);
-    }
     public override void CreateRoom(HashSet<Vector2Int> floorpositions)
     {
         base.CreateRoom(floorpositions);
@@ -33,7 +28,7 @@ public class FightRoom : Room
         int i = 0;
         while(i < NumberofEnemies) 
         {
-            Vector2Int position = listfloorpos[UnityEngine.Random.Range(0,listfloorpos.Count)];
+            Vector2Int position = listfloorpos[Random.Range(0,listfloorpos.Count)];
             HashSet<Vector2Int> neighborpositions = new HashSet<Vector2Int>();
             foreach(var neighbor in Direction2D.eightDirectionsList) {
                 neighborpositions.Add(position + neighbor);
@@ -47,14 +42,19 @@ public class FightRoom : Room
     }
     protected override void TriggerState()
     {
-        base.TriggerState();
-        this.statemachine.CurState.FrameUpdate();
         foreach(var ele in listenemy) {
-            if(ele.Isdetecting) {
+            if(ele.Isdetecting && !ele.Reciver.IsDead) {
                 statemachine.ChangeSate(closeState);
                 return;
             }
         }
         this.statemachine.ChangeSate(openState);
+    }
+    public override void DeSpawn()
+    {
+        base.DeSpawn();
+        foreach(var ele in listenemy) {
+            if(!ele.Reciver.IsDead) EnemySpawner.Instance.DeSpawnToPool(ele.transform);
+        }
     }
 }

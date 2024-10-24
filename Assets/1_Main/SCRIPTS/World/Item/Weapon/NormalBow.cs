@@ -8,5 +8,6 @@ public class NormalBow : Bow
     {
         Quaternion quater = Quaternion.LookRotation(this.transform.forward,guntip.transform.up);
         Transform arrow = WeaponAttackSpawner.Instance.Spawn("NormalArrow",guntip.transform.position,quater);
+        arrow.GetComponent<DameDealer>().Dame = this.dame;
     }
 }

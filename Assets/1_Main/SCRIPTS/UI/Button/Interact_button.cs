@@ -5,8 +5,8 @@ using UnityEngine;
 public class Interact_button : BaseButton
 {
     public Player player;
-    public override void Act()
+    public override void OnClick()
     {
-        this.player.Interact();
+        Player.Instance.Interact();
     }
 }

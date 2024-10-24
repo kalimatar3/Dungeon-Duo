@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Net;
+using DG.Tweening;
 using UnityEngine;
 public class PlayerEquipment : MyBehaviour
 {
@@ -15,15 +16,24 @@ public class PlayerEquipment : MyBehaviour
     protected void Loadcharacter() {
         this.character = GetComponentInParent<Player>();
     }
-    public void EquipWeapon(Weapon weapon) {
-        if(weapons.Count > 1 && weapon == weapons.Peek()) return;
-        if(weapons.Count > 2) weapons.Pop();
+    public void CollectWeapon(Weapon weapon) {
+        if(weapons.Count >= 1) 
+        {
+            Weapon weapon1 = weapons.Peek();
+            weapon1.OnCollect(character);
+        }
+        if(weapons.Count >= 2) 
+        {
+            Weapon thisweapon = weapons.Pop();
+            thisweapon.transform.position = weapon.transform.position;
+            thisweapon.OnDrop();
+        }
         weapons.Push(weapon);
-        weapon.transform.parent = this.transform;
-        weapon.transform.localPosition = Vector3.zero;
-        weapon.Model.transform.localPosition = Vector3.zero;
-        weapon.Model.gameObject.SetActive(false);
-        weapon.Box.enabled = false;
+    }
+    public void EquipWeapon() {
+        Weapon weapon = weapons.Peek(); 
+        character.Weapon = weapon;
+        weapon.OnEquip(character);
     }
     public void ChangeWeapon() {
         if(weapons.Count !=2) return;
@@ -31,6 +41,6 @@ public class PlayerEquipment : MyBehaviour
         Weapon weapon2 = weapons.Pop();
         weapons.Push(weapon2);
         weapons.Push(weapon1);
-        character.Weapon = weapons.Peek();
+        this.EquipWeapon();
     }
 }

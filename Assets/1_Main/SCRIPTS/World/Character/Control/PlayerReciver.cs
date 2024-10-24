@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 public class PlayerReciver : DameReciver
 {
     [SerializeField] protected Player player;
+    [SerializeField] protected float dp;
+    public float Dp {get {return dp;} set {dp = value;}}
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -13,6 +15,21 @@ public class PlayerReciver : DameReciver
     }
     protected void LoadPlayer() {
         this.player = GetComponentInParent<Player>();
+    }
+    public override void DeductHp(float dame)
+    {
+        if(isDead) return;
+        if(dp - dame <= 0 ) 
+        {
+            base.DeductHp(Mathf.Abs(dp - dame));
+            return;
+        }
+        dp -= dame;
+    }
+    public override void Dead()
+    {
+        base.Dead();
+        player.DeSpawn();
     }
     public override void Stun(float time)
     {

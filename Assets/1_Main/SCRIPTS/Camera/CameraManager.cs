@@ -35,7 +35,7 @@ public class CameraManager : LazySingleton<CameraManager>
         this.ScreenWidth = maincam.orthographicSize * maincam.aspect * 2;
     }
     protected void FixedUpdate() {
-        // this.ScreenLength = maincam.orthographicSize * 2f;
-        // this.ScreenWidth = maincam.orthographicSize * maincam.aspect * 2;
+        this.ScreenLength = maincam.orthographicSize * 2f;
+        this.ScreenWidth = maincam.orthographicSize * maincam.aspect * 2;
     }
 }

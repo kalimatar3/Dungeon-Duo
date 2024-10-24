@@ -35,7 +35,7 @@ public abstract class BaseButton : MyBehaviour,IPointerDownHandler, IPointerUpHa
     protected void DelayAct()
     {
         if (!CanAct()) return;
-        this.Act();
+        this.OnClick();
     }
     protected virtual bool CanAct()
     {
@@ -45,7 +45,7 @@ public abstract class BaseButton : MyBehaviour,IPointerDownHandler, IPointerUpHa
     {
         this.Permission = canAct;
     }
-    public abstract void Act();
+    public abstract void OnClick();
 
     public void OnPointerDown(PointerEventData eventData)
     {

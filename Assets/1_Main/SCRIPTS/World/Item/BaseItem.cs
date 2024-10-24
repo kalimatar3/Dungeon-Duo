@@ -27,15 +27,18 @@ public abstract class BaseItem : MyBehaviour,Iinteractable
     protected virtual void OnEnable() {
         this.OnDrop();
     }
-    public virtual void OnCollect(BaseCharacter character) {
-        this.model.transform.DOKill();
+    public virtual void OnCollect(Player character) {
         this.model.gameObject.SetActive(false);
         this.box.enabled = false;
     }
     public void OnDrop() {
+        this.transform.parent = null;
+        this.model.gameObject.SetActive(true);
+        this.box.enabled = true;
+        this.model.transform.up = Vector2.up;
         this.model.transform.DOMoveY(this.model.transform.position.y + 0.3f ,0.5f).SetLoops(-1,LoopType.Yoyo);
     }
-    public void OnInteract(Player player)
+    public virtual void OnInteract(Player player)
     {
         this.OnCollect(player);
     }

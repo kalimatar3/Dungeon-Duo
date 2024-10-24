@@ -7,7 +7,7 @@ public class PlayerFireOrb : RangedAttack
     {
         base.LoadComponents();
         this.Multicalhit = true;
-        this.canDespawnbytime =true;
+        this.canDespawnbytime = true;
         this.canDeSpawnbyhit = false;
     }
 }
