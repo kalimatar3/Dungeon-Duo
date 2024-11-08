@@ -19,9 +19,15 @@ public class PlayerReciver : DameReciver
     public override void DeductHp(float dame)
     {
         if(isDead) return;
-        if(dp - dame <= 0 ) 
+        if(player.SetcombatStateCr != null) 
+        {
+            player.StopCoroutine(player.SetcombatStateCr);
+        }
+        player.SetcombatStateCr = player.StartCoroutine(player.CrSetCombatState());
+        if(dp - dame < 0 ) 
         {
             base.DeductHp(Mathf.Abs(dp - dame));
+            dp = 0; 
             return;
         }
         dp -= dame;
@@ -29,6 +35,7 @@ public class PlayerReciver : DameReciver
     public override void Dead()
     {
         base.Dead();
+        LSManager.Instance.SaveGame();
         player.DeSpawn();
     }
     public override void Stun(float time)

@@ -18,3 +18,5 @@ MonoBehaviour:
   DetectionRange: 10
   AttackRange: 5
   FireRate: 1.5
+  GoldDroprate: 0.3
+  EnergyDroprate: 0.7

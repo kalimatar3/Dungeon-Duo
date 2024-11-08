@@ -74,7 +74,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.002202779, y: -0.1431779}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -85,7 +85,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.40720737, y: 0.6830031}
+  m_Size: {x: 0.5525879, y: 0.96935886}
   m_EdgeRadius: 0
 --- !u!50 &5957105109898086187
 Rigidbody2D:
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be99e570061b6c44b8190ce6c8671587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSO: {fileID: 11400000, guid: 7ebcf716a0711ab4ba828cc037110d35, type: 2}
+  playerSO: {fileID: 11400000, guid: 7ebcf716a0711ab4ba828cc037110d35, type: 2}
   hand: {fileID: 5208566575979401173}
   reciver: {fileID: 6646880331857859820}
   body: {fileID: 5957105109898086187}
@@ -140,9 +140,17 @@ MonoBehaviour:
   caninteract: 1
   candoskill: 1
   skillCooldownTime: 0
+  skillCooldownTimer: 0
+  SkillMpCost: 0
+  RecoverCombatSateTime: 5
+  RestoreoneDPtime: 0.2
+  RestoreoneDPtimer: 0
+  iscombatstate: 0
+  minnoticebox: {x: 0, y: 0}
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  UI: {fileID: 0}
   shield: {fileID: 1671742198453641656}
 --- !u!1 &1151428191280774112
 GameObject:
@@ -209,7 +217,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.008810937, y: -0.112339586}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -220,7 +228,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48414552, y: 0.7836473}
+  m_Size: {x: 0.55463314, y: 1.0083265}
   m_EdgeRadius: 0
 --- !u!114 &6646880331857859820
 MonoBehaviour:
@@ -576,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f0852b66b478e42b813085642825d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &8490619325352791896
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,7 +596,7 @@ GameObject:
   - component: {fileID: 2709528155902316971}
   - component: {fileID: 6418987518630200790}
   - component: {fileID: 7321810967328914969}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PlayerCollector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -658,7 +666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCheck: 0
-  character: {fileID: 2541854776763033554}
+  player: {fileID: 0}
   box: {fileID: 6418987518630200790}
 --- !u!1 &8932775343806364698
 GameObject:

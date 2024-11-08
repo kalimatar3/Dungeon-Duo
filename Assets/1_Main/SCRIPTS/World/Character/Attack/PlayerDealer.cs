@@ -24,6 +24,6 @@ public abstract class PlayerDealer : DameDealer, IDespawnable
     {
         if(dameable.GetType() == typeof(PlayerReciver)) return;
         base.Hit(dameable);
-        if(canDeSpawnbyhit) this.DeSpawn();
+        if(canDeSpawnbyhit || dameable.GetTransform().GetComponent<GroundReciver>()) this.DeSpawn();
     }
 }

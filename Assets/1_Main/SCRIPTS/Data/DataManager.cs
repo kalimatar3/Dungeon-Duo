@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
+using DG.Tweening.Core.Easing;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
-[DefaultExecutionOrder(-100)]
+[DefaultExecutionOrder(-10)]
 public class DataManager : LazySingleton<DataManager>
 {
-    [SerializeField] internal bool isCompletedLoadingData;
     public Player[] Characters;
     [Header("DynamicData")]
     public CharacterDynamicData characterDynamicData; 
     public PropertyDynamicData  propertyDynamicData;
-    public LoadaleCharacterData CurCharacterData;
+    public LoadableCharacterData CurCharacterData;
     public bool IsCompletedLoadeddata;
     protected override void Awake()
     {
@@ -36,15 +35,21 @@ public class DataManager : LazySingleton<DataManager>
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadCharacterFromResources();
+        //this.LoadCharacterFromResources();
+        // StartCoroutine(this.CrInitPlayerDynamicData());
+        // StartCoroutine(this.CrCheckLoadedData());
+    }
+    protected void OnEnable() {
         StartCoroutine(this.CrInitPlayerDynamicData());
-        StartCoroutine(this.CrCheckLoadedData());
+        StartCoroutine(this.CrCheckLoadedData());       
     }
     protected IEnumerator CrCheckLoadedData() {
-        this.isCompletedLoadingData = false;
+        this.IsCompletedLoadeddata = false;
         yield return new WaitUntil(predicate:()=> {
+            if(LSManager.Instance == null) return false;
+            if(!LSManager.IsloadedData) return false;
             if(this.propertyDynamicData == null) return false;
-            if(this.characterDynamicData ==null) return false;
+            if(this.characterDynamicData == null) return false;
             return true;
         });
         this.IsCompletedLoadeddata = true;
@@ -52,14 +57,16 @@ public class DataManager : LazySingleton<DataManager>
     protected IEnumerator CrInitPlayerDynamicData() {
         yield return new WaitUntil(predicate:()=>{
             if(Characters == null) return false;
+            if(!this.IsCompletedLoadeddata) return false;
             return true;
         });
         this.InitPlayerDynamicData();
     }
     protected void InitPlayerDynamicData() {
-        if(characterDynamicData.listcharacterDatas.Count > 0) return;
+        if(characterDynamicData.listcharacterDatas.Count > 0) return; 
+        Debug.Log("LoadedPlayerData");
         foreach(var ele in Characters) {
-            LoadaleCharacterData characterData = new LoadaleCharacterData(ele.name);
+            LoadableCharacterData characterData = new LoadableCharacterData(ele.name);
             characterDynamicData.listcharacterDatas.Add(characterData);
         }
     }

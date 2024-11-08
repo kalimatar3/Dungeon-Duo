@@ -10,4 +10,6 @@ public class EnemySO : ScriptableObject
     public float DetectionRange;
     public float AttackRange;
     public float FireRate;
+    public float GoldDroprate;
+    public float EnergyDroprate;
 }

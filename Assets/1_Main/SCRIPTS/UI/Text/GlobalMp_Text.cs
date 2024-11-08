@@ -6,6 +6,7 @@ public class GlobalMp_Text : BaseTextUI
 {
     public override void ShowText()
     {
-        if(Player.Instance) this.text.text = Player.Instance.CurMp.ToString("F0") + "/" + Player.Instance.MaxMp.ToString("F0");
+        if(Player.Instance == null) return;
+        this.text.text = Player.Instance.CurMp.ToString("F0") + "/" + Player.Instance.MaxMp.ToString("F0");
     }
 }

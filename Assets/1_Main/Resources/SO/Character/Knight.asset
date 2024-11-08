@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: ed38d7da51959bc48a1bed67c5b5f2eb, type: 3}
   BaseStatistic:
-    Hp: 0
-    Mp: 0
-    Dp: 0
-    Speed: 0
-    SkillCooldownTime: 0
-    SkillMpCost: 0
+    Hp: 5
+    Mp: 20
+    Dp: 5
+    Speed: 2
+    SkillCooldownTime: 20
+    SkillMpCost: 5
   CharacterDescription: Knight is a brave warrior, clad in iron armor and wielding
     a shield, always ready to defend the kingdom from enemies with unwavering strength
     and loyalty.
   SkillIcon: {fileID: 1882884639, guid: 651af483763c84840a83a07724f4d189, type: 3}
-  SkillDescription: Create a shield to block alll Raned attack
+  SkillDescription: Create a shield to block alll Ranged attack

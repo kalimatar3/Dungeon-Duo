@@ -10,6 +10,6 @@ public class Bomber : Enemy
     }
     protected void ExploseSeft() {
         EnemySchemeSpawner.Instance.Spawn("Explosion",this.transform.position,Quaternion.identity);
-        this.DeSpawn();   
+        this.reciver.Dead();
     }
 }

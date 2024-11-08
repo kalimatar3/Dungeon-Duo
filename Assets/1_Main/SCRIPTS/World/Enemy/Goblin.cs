@@ -9,7 +9,7 @@ public class Goblin : MeleeEnemy
         if(target == null) return;
         Vector3 dir = (target.transform.position - this.transform.position).normalized;
         Quaternion quater = Quaternion.LookRotation(this.transform.forward,dir);
-        Transform meleeattack = EnemySchemeSpawner.Instance.Spawn("MeleeAttack",this.transform.position + dir,quater);
+        Transform meleeattack = EnemySchemeSpawner.Instance.Spawn("MeleeAttack",this.transform.position + dir * attackRange,quater);
         meleeattack.GetComponent<EnemyDealer>().Dame = 1;
     }
 }

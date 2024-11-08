@@ -1,14 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-
+[DefaultExecutionOrder(-1)]
 public class LSManager : MyBehaviour
 {
     protected static LSManager instance;
     public static LSManager Instance { get => instance;}
     public static string CharacterDatafilename = "Character.json";
     public static string PropertyDatafilename = "property.json";
+    public static bool IsloadedData = false;
     protected override void Awake()
     {
         base.Awake();
@@ -24,6 +24,7 @@ public class LSManager : MyBehaviour
         StartCoroutine(this.CrLoadGameData());
     }
     protected IEnumerator CrLoadGameData() {
+        IsloadedData = false;
         yield return new WaitUntil(predicate: () => {
             if(DataManager.Instance == null) return false;
             return true;
@@ -33,6 +34,7 @@ public class LSManager : MyBehaviour
     public void LoadGameDatas() {
         DataManager.Instance.characterDynamicData = LoadGameData<CharacterDynamicData>(CharacterDatafilename);
         DataManager.Instance.propertyDynamicData = LoadGameData<PropertyDynamicData>(PropertyDatafilename);
+        IsloadedData = true;
     }
     public T LoadGameData<T>(string filename) where T: new() {
         string filePath = Path.Combine(Application.persistentDataPath,filename);
@@ -90,10 +92,5 @@ public class LSManager : MyBehaviour
         File.WriteAllText(filePath, jsonString);
 
         Debug.Log(dynamicData.ToString() + " saved to: " + filePath);
-    }
-
-    protected void OnApplicationQuit()
-    {
-        this.SaveGame();
     }
 }

@@ -16,7 +16,6 @@ public class InputManager : MyBehaviour
             Destroy(this);
         }
         else {
-            DontDestroyOnLoad(this.gameObject);
             instance = this;
         }
     }
@@ -24,7 +23,7 @@ public class InputManager : MyBehaviour
         this.GetMovingInput();
     }
     protected void GetMovingInput() {
-        this.MovingInput = new Vector2(leftJoyStick.Horizontal,leftJoyStick.Vertical);
+        //this.MovingInput = new Vector2(leftJoyStick.Horizontal,leftJoyStick.Vertical);
         this.MovingInput = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
     }
 }

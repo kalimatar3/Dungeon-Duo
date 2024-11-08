@@ -13,12 +13,17 @@ public class MapManager : LazySingleton<MapManager>
     public RoomGenerator roomGenerator;
     public RoomGenerator RoomGenerator {get {return roomGenerator;}}
     public bool IsCompletedLoadedMap;
+    public bool IsCompletedClearMap;
     public int Curfloor = 0;
+    public int Goldnumber;
     public List<Room> Rooms {
         get {return rooms;}
         set {
             rooms = value;
         } 
+    }
+    private void Start() {
+        this.Goldnumber = 0;           
     }
     protected override void LoadComponents()
     {
@@ -45,11 +50,20 @@ public class MapManager : LazySingleton<MapManager>
         this.corridors.Clear();
         walls.Clear();
     }
-    public void GenerateFirstfloor() {
+    public void Generatefloor() {
+        this.ClearRooms();
+        StartCoroutine(CrCheckisCompletedClearMap());
+        StartCoroutine(this.Crloading());
+        StartCoroutine(this.CrGenerateFloor());
+    }
+    protected IEnumerator CrGenerateFloor() {
+        yield return new WaitUntil(()=> {
+            if(!IsCompletedClearMap) return false;
+            return true;
+        });
         this.roomGenerator.CreateRooms(Curfloor);
         this.InitPlayer();
-        StartCoroutine(this.Crloading());
-        StartCoroutine(CrCheckisCompletedLoad());
+        yield return CrCheckisCompletedLoad();
     }
     protected IEnumerator Crloading() {
         PanelManager.instance.getPanelbyName("Loading_Panel").gameObject.SetActive(true);
@@ -69,6 +83,16 @@ public class MapManager : LazySingleton<MapManager>
             return true;
         });
     this.IsCompletedLoadedMap = true;
+    }
+    protected IEnumerator CrCheckisCompletedClearMap() {
+        this.IsCompletedClearMap = false;
+        yield return new WaitUntil(()=>{
+            if(rooms.Count > 0) return false;
+            if(corridors.Count > 0) return false;
+            if(walls.Count> 0) return false;
+            return true;
+        });
+        this.IsCompletedClearMap = true;
     }
     public void InitPlayer()  {
         if(Player.instance) {

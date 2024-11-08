@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 4648cb53fcf83c04ab650c58484fe274, type: 3}
   BaseStatistic:
-    Hp: 0
-    Mp: 0
-    Dp: 0
-    Speed: 0
-    SkillCooldownTime: 0
-    SkillMpCost: 0
+    Hp: 3
+    Mp: 50
+    Dp: 1
+    Speed: 2
+    SkillCooldownTime: 5
+    SkillMpCost: 10
   CharacterDescription: Mage is a master of arcane arts, wielding powerful spells
     and ancient knowledge to control the elements and bend reality to their will.
   SkillIcon: {fileID: 1228325010, guid: 651af483763c84840a83a07724f4d189, type: 3}

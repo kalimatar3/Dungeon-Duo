@@ -1,14 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 [System.Serializable]
 public class CharacterDynamicData : DynamicData
 {
-    public List<LoadaleCharacterData> listcharacterDatas;
+    public List<LoadableCharacterData> listcharacterDatas;
 }
 [System.Serializable]
-public class LoadaleCharacterData {
-     public LoadaleCharacterData(string name) {
+public class LoadableCharacterData {
+     public LoadableCharacterData(string name) {
         this.Name = name;
         this.level = 0;
     }

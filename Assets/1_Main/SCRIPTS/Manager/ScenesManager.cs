@@ -14,7 +14,14 @@ public class ScenesManager : LazySingleton<ScenesManager>
     {
         base.Awake();
         DontDestroyOnLoad(this);
-        this.LoadScenebyName(MyScene.MainMenuScene.ToString());
+        StartCoroutine(this.CrDelayLoadMainMenuScene());
+    }
+    protected IEnumerator CrDelayLoadMainMenuScene() {
+        yield return new WaitUntil(()=> {
+            if(!DataManager.instance.IsCompletedLoadeddata) return false;
+            return true;
+        });
+        this.LoadScenebyName(MyScene.MainMenuScene.ToString());       
     }
     public void LoadScenebyName(string scenename)
     {

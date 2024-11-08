@@ -14,7 +14,7 @@ public abstract class BaseTextUI : MyBehaviour
         if(text == null) Debug.LogWarning("Cant found Text");
     }
     protected virtual void OnEnable() {
-        this.ShowText();
+        //this.ShowText();
     }
     public static string FormatNumberWithDots(int number)
     {
@@ -32,7 +32,7 @@ public abstract class BaseTextUI : MyBehaviour
         return formattedStr;
     }
     public abstract void ShowText();
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         this.ShowText();
     }

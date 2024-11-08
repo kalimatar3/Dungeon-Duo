@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyRangedAttack : EnemyDealer,IDameable
+public abstract class EnemyRangedAttack : EnemyDealer,IDameable
 {
     protected override void LoadComponents()
     {

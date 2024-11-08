@@ -6,6 +6,6 @@ using UnityEngine;
 public class GameManager : LazySingleton<GameManager>
 {
     private void Start() {
-        MapManager.instance.GenerateFirstfloor();
+        MapManager.instance.Generatefloor();
     }
 }

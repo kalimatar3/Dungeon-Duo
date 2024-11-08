@@ -4,7 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 public class PlayerEquipment : MyBehaviour
 {
-    [SerializeField] protected Player character;
+    [SerializeField] protected Player player;
     [SerializeField] protected Stack<Weapon> weapons = new Stack<Weapon>();
     public Stack<Weapon> Weapons {get {return weapons;}}
     protected override void LoadComponents()
@@ -14,13 +14,13 @@ public class PlayerEquipment : MyBehaviour
         weapons = new Stack<Weapon>();
     }
     protected void Loadcharacter() {
-        this.character = GetComponentInParent<Player>();
+        this.player = GetComponentInParent<Player>();
     }
     public void CollectWeapon(Weapon weapon) {
         if(weapons.Count >= 1) 
         {
             Weapon weapon1 = weapons.Peek();
-            weapon1.OnCollect(character);
+            weapon1.OnCollect(player);
         }
         if(weapons.Count >= 2) 
         {
@@ -32,15 +32,20 @@ public class PlayerEquipment : MyBehaviour
     }
     public void EquipWeapon() {
         Weapon weapon = weapons.Peek(); 
-        character.Weapon = weapon;
-        weapon.OnEquip(character);
+        player.Weapon = weapon;
+        player.UI.changeWeapon_Button.Icon.sprite = weapon.Data.Icon;
+        player.UI.changeWeapon_Button.message.message = "Level " +  (weapon.level + 1).ToString("F0");
+        weapon.OnEquip(player);
+        
     }
     public void ChangeWeapon() {
         if(weapons.Count !=2) return;
+        Debug.Log("ChangeWeapon");
         Weapon weapon1 = weapons.Pop();
         Weapon weapon2 = weapons.Pop();
-        weapons.Push(weapon2);
         weapons.Push(weapon1);
+        weapons.Push(weapon2);
+        weapon1.OnCollect(player);
         this.EquipWeapon();
     }
 }

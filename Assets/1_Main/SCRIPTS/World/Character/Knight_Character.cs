@@ -21,10 +21,10 @@ public class Knight_Character : Player
     }
     protected override void CalculateStats(int level)
     {
-        this.MaxHp = characterSO.BaseStatistic.Hp;
-        this.MaxDp = characterSO.BaseStatistic.Dp;
-        this.skillCooldownTime = characterSO.BaseStatistic.SkillCooldownTime;
-        this.SkillMpCost = characterSO.BaseStatistic.SkillMpCost;
-        this.MaxMp = characterSO.BaseStatistic.Mp;
+        this.MaxHp = playerSO.BaseStatistic.Hp;
+        this.MaxDp = playerSO.BaseStatistic.Dp;
+        this.skillCooldownTime = playerSO.BaseStatistic.SkillCooldownTime;
+        this.SkillMpCost = playerSO.BaseStatistic.SkillMpCost;
+        this.MaxMp = playerSO.BaseStatistic.Mp;
     }
 }

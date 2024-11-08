@@ -14,6 +14,7 @@ public class EnemyAttackState : EnemyState
     public override void FrameUpdate()
     {
         base.FrameUpdate();
+        if(!enemy.CanAttack) return;
         timer += Time.deltaTime *1f;
         if(timer < enemy.Firerate) 
         {

@@ -1,15 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Character_Panel : BasePanel
 {
     [Header("Data")]
-    public LoadaleCharacterData loadedCharacterData;
-    [SerializeField] protected Player player;
+    public LoadableCharacterData loadedCharacterData;
+    public Player player;
     [Header("Components")]
+    public LevelupCharacter_button levelupCharacter_Button;
     public Message CharacterDescription;
     public Message SkillDescription;
     public Image Icon;
@@ -37,6 +36,8 @@ public class Character_Panel : BasePanel
         this.SkillDescription.message = player.SO.SkillDescription;
         this.Icon.sprite = player.SO.Icon;
         this.SKillIcon.sprite = player.SO.SkillIcon;
-        this.Level_Text.message = "level " + loadedCharacterData.level.ToString();
+        this.Level_Text.message = "level " + (loadedCharacterData.level +1).ToString();
+        this.levelupCharacter_Button.Price_text.message = player.GetLevelupPricebyLevel(loadedCharacterData.level).ToString();
+        this.levelupCharacter_Button.Price = player.GetLevelupPricebyLevel(loadedCharacterData.level);
     }
 }

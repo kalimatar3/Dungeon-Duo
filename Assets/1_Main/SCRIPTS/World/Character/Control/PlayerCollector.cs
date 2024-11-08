@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerCollector : MyBehaviour
 {
     [SerializeField] protected bool isCheck;
-    [SerializeField] protected Player character;
+    [SerializeField] protected Player player;
     [SerializeField] protected CircleCollider2D box;
     [SerializeField] protected Iinteractable listInteractable;
     public Iinteractable ListInteractable {get {return listInteractable;}}
@@ -18,7 +18,7 @@ public class PlayerCollector : MyBehaviour
         this.Loadcharacter();
     }
     protected void Loadcharacter() {
-        this.character = GetComponentInParent<Player>();
+        this.player = GetComponentInParent<Player>();
     }
     protected void Loadcollider() {
         this.box = this.GetComponent<CircleCollider2D>();
@@ -32,6 +32,14 @@ public class PlayerCollector : MyBehaviour
         else isCheck = false;
     }
     private void OnTriggerStay2D(Collider2D other) {
+        if(other.GetComponent<Gold>()) {
+            other.GetComponent<Gold>().OnInteract(player);
+            return;
+        }
+        if(other.GetComponent<Energyball>()) {
+            other.GetComponent<Energyball>().OnInteract(player);
+            return;
+        }
         if(other.GetComponentInParent<Iinteractable>() != null)
         this.listInteractable = other.GetComponentInParent<Iinteractable>();
         else if(other.GetComponent<Iinteractable>() != null)

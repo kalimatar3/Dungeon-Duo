@@ -8,4 +8,5 @@ public class WeaponSO : ScriptableObject
     public float Dame;
     public float Firerate;
     public float Range;
+    public Sprite Icon;
 }

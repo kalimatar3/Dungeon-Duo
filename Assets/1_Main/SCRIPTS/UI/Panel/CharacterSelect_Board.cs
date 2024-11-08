@@ -22,9 +22,11 @@ public class CharacterSelect_Board : MyBehaviour
         yield return new WaitUntil(predicate:()=> {
             if(DataManager.Instance == null) return false;
             if(DataManager.Instance.characterDynamicData == null) return false;
+            if(DataManager.Instance.characterDynamicData.listcharacterDatas.Count <= 0) return false; 
             return true;
         });
         for(int i = 0; i < listcharacterselectbutton.Count;i++) {
+            Debug.Log(i);
             listcharacterselectbutton[i].loadaleCharacterData = DataManager.Instance.characterDynamicData.listcharacterDatas[i];
             listcharacterselectbutton[i].Present();
         }

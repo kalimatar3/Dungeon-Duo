@@ -12,11 +12,20 @@ public class FightRoom : Room
         base.CreateRoom(floorpositions);
         this.PlaceEnemies();
     }
-    protected void PlaceEnemies() {
+    protected virtual void PlaceEnemies() {
         if(listenemy.Count > 0) listenemy.Clear();
         HashSet<Vector2Int> EnemyPos = this.InitListEnemyPos();
         foreach(var ele in EnemyPos) {
-            Transform enemy = EnemySpawner.Instance.Spawn("Witch",new Vector3(ele.x,ele.y,0),Quaternion.identity);
+            Transform enemy = this.transform;
+            if(UnityEngine.Random.value < 0.3f) {
+                enemy = EnemySpawner.Instance.Spawn("Witch",new Vector3(ele.x,ele.y,0),Quaternion.identity);                
+            }
+            else if(UnityEngine.Random.value < 0.5f) {
+                enemy = EnemySpawner.Instance.Spawn("Bomber",new Vector3(ele.x,ele.y,0),Quaternion.identity);                
+            }
+            else {
+                enemy = EnemySpawner.Instance.Spawn("Goblin",new Vector3(ele.x,ele.y,0),Quaternion.identity);
+            }
             enemy.GetComponent<Enemy>().RoomHolder = this;
             listenemy.Add(enemy.GetComponent<Enemy>());
         }
@@ -24,7 +33,7 @@ public class FightRoom : Room
     protected HashSet<Vector2Int> InitListEnemyPos() {
         HashSet<Vector2Int> positions = new HashSet<Vector2Int>();
         List<Vector2Int> listfloorpos = new List<Vector2Int>(floorpositions);
-        int NumberofEnemies = 1;
+        int NumberofEnemies = Random.Range(2,MapManager.Instance.RoomGenerator.MinRoomHeight/5 + 1);
         int i = 0;
         while(i < NumberofEnemies) 
         {

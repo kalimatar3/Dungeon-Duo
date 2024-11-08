@@ -14,7 +14,6 @@ public class Shield : PlayerDealer
     }
     public override void Hit(IDameable dameable)
     {
-        base.Hit(dameable);
         if(dameable.GetTransform().GetComponent<EnemyRangedAttack>()) dameable.Dead();
     }
 }

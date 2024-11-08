@@ -16,10 +16,12 @@ public class EnemyReciver : DameReciver
     public override void Dead()
     {
         base.Dead();
+        this.StopAllCoroutines();
         this.enemy.DeSpawn();
     }
     public override void Knockback(IHitable hitable, float power)
     {
+        if(this.isDead) return;
         base.Knockback(hitable, power);
         Debug.Log(enemy.name + " knockback ");
         Vector3 dir = (transform.position - new Vector3(hitable.GetTransform().position.x,transform.position.y,this.transform.position.z)).normalized;

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891dd5b022ffe9943a903293d4b6de5a, type: 3}
   m_Name: NormalSword
   m_EditorClassIdentifier: 
-  Name: TestSword
+  Name: NormalSword
   Dame: 1
   Firerate: 0.5
   Range: 1
+  Icon: {fileID: 21300000, guid: 5e821bbe1a4324442ae4fad5157a7222, type: 3}

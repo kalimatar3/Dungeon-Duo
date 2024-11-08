@@ -34,6 +34,11 @@ public abstract class Sword : Weapon
             }
             transform.localRotation = Quaternion.Euler(0,0,0);
     }
+    public override void UpgradeFormula(int level)
+    {
+        this.dame = SO.Dame * (1 + level * 0.15f);
+        this.firerate = Mathf.Max(SO.Firerate/2,SO.Firerate * (1 - level * 0.1f));
+    }
     public override void OnEquip(Player player)
     {
         base.OnEquip(player);

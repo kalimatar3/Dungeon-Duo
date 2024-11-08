@@ -10,8 +10,7 @@ public class Portal : MyBehaviour, Iinteractable
     }
     public void OnInteract(Player player)
     {
-        MapManager.Instance.ClearRooms();
         MapManager.Instance.Curfloor ++;
-        MapManager.Instance.GenerateFirstfloor();
+        MapManager.Instance.Generatefloor();
     }
 }

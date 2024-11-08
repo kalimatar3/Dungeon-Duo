@@ -18,26 +18,30 @@ public abstract class Staff : Weapon
         this.StartCoroutine(this.SwingModel(180,0.1f));
     }
     protected IEnumerator SwingModel(float angle, float duration)
-        {
-            //this.model.transform.localPosition = new Vector3(0,0.5f,0);
-            int sign = 0;
-            if(this.transform.up.y >= 0) {
-                sign = 1;
-            }
-            else sign = -1;
-            Quaternion startRotation = model.transform.rotation *Quaternion.Euler(0, 0, -angle/2 * sign);
-            Quaternion endRotation = model.transform.rotation * Quaternion.Euler(0, 0, angle/2 * sign);
-            float elapsedTime = 0.0f;
-            while (elapsedTime < duration)
-            {
-                elapsedTime += Time.deltaTime;
-
-                float t = elapsedTime / duration;
-
-                model.transform.rotation = Quaternion.Lerp(startRotation, endRotation, t);
-
-                yield return new WaitForSeconds(Time.deltaTime *1f);
-            }
-            model.transform.localRotation = Quaternion.Euler(0,0,0);
+    {
+        //this.model.transform.localPosition = new Vector3(0,0.5f,0);
+        int sign = 0;
+        if(this.transform.up.y >= 0) {
+            sign = 1;
         }
+        else sign = -1;
+        Quaternion startRotation = model.transform.rotation *Quaternion.Euler(0, 0, -angle/2 * sign);
+        Quaternion endRotation = model.transform.rotation * Quaternion.Euler(0, 0, angle/2 * sign);
+        float elapsedTime = 0.0f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            float t = elapsedTime / duration;
+
+            model.transform.rotation = Quaternion.Lerp(startRotation, endRotation, t);
+
+            yield return new WaitForSeconds(Time.deltaTime *1f);
+        }
+        model.transform.localRotation = Quaternion.Euler(0,0,0);
+    }
+    public override void UpgradeFormula(int level)
+    {
+        this.dame = SO.Dame * (1 + level * 0.3f); // 2;
+    }
 }

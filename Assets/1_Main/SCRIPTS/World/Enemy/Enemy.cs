@@ -1,8 +1,7 @@
 using System;
 using System.Collections;
-using System.Net.Security;
-using System.Runtime.InteropServices.WindowsRuntime;
-using UnityEditor;
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 [RequireComponent(typeof(Collider2D))]
@@ -17,6 +16,7 @@ public abstract class Enemy : MyBehaviour,IDespawnable
     protected float firerate;
     protected float timer;
     protected bool canAttack = true;
+    protected float GoldDroprate,EnergyDroprate;
     [SerializeField] protected bool candetected;
     [SerializeField] protected bool isdetecting;
     [Header("Components")]
@@ -67,7 +67,6 @@ public abstract class Enemy : MyBehaviour,IDespawnable
         this.Loadbody();
         this.LoadCharacterCheck();
         this.loadMovement();
-        this.LoadData();
     }
     protected void Loadbody() {
         this.body = GetComponent<Rigidbody2D>();
@@ -77,6 +76,17 @@ public abstract class Enemy : MyBehaviour,IDespawnable
         this.detectionRange = enemySO.DetectionRange;
         this.attackRange = enemySO.AttackRange;
         this.movement.Speed = enemySO.Wandaspeed;
+        this.GoldDroprate = enemySO.GoldDroprate;
+        this.EnergyDroprate = enemySO.EnergyDroprate;
+        this.reciver.Hp = enemySO.MaxHp + MapManager.Instance.Curfloor * 1;
+    }
+    protected IEnumerator CrDelayLoadData() {
+        yield return new WaitUntil(()=> {
+            if(MapManager.Instance == null) return false;
+            if(MapManager.Instance.RoomGenerator == null) return false;
+            return true;
+        });
+        this.LoadData();
     }
     protected void loadMovement() {
         movement = GetComponentInChildren<EnemyMovement>();
@@ -102,8 +112,10 @@ public abstract class Enemy : MyBehaviour,IDespawnable
     }
     protected virtual void OnEnable() {
         this.stateMachine.Initialize(wanderingState);
+        this.StartCoroutine(this.CrDelayLoadData());
         this.candetected  = false;
-        this.reciver.Hp = enemySO.MaxHp;
+        this.canAttack = true;
+        this.movement.CanMove = true;
     }
     protected virtual void UpdateState() {
         this.stateMachine.CurState.FrameUpdate();
@@ -137,9 +149,23 @@ public abstract class Enemy : MyBehaviour,IDespawnable
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,attackRange);
     }
-    public void DeSpawn()
+    public virtual void DeSpawn()
     {
-        this.reciver.StopAllCoroutines();
         EnemySpawner.Instance.DeSpawnToPool(this.transform);
+        this.DropItem();
+    }
+    protected virtual void DropItem() {
+        if(UnityEngine.Random.value < GoldDroprate) {
+            Transform gold = ItemSpawner.Instance.Spawn("Gold",this.transform.position,Quaternion.identity);
+        }
+        if(UnityEngine.Random.value < EnergyDroprate) {
+            Transform energyball = ItemSpawner.Instance.Spawn("EnergyBall",this.transform.position,Quaternion.identity);           
+        }
+        if(UnityEngine.Random.value < 0.1f) {
+            Transform energyball = ItemSpawner.Instance.Spawn("Hp_potion",this.transform.position,Quaternion.identity);
+        }
+        if(UnityEngine.Random.value < 0.1f) {
+            Transform energyball = ItemSpawner.Instance.Spawn("Mp_potion",this.transform.position,Quaternion.identity);
+        }
     }
 }

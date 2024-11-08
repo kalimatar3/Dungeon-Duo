@@ -36,7 +36,6 @@ public class Corridor : MyBehaviour, IDespawnable
             for(int j = -width/2 ; j < width/2 + width % 2 ; j++) {
                 Vector2Int newpos = position + dir * j; 
                 corridor.Add(newpos);
-                Debug.Log(newpos);
                 foreach(var ele in baseroom.Wallpositions) {
                     if((int)ele.x == newpos.x && (int)ele.y == newpos.y) {
                         GateDetected gateDetected = new GateDetected() {
@@ -74,7 +73,6 @@ public class Corridor : MyBehaviour, IDespawnable
             for(int j = -width/2 ; j < width/2 + width % 2 ; j++) {
                 Vector2Int newpos = position + dir * j; 
                 corridor.Add(newpos);
-                Debug.Log(newpos);
                 foreach(var ele in baseroom.Wallpositions) {
                     if((int)ele.x == newpos.x && (int)ele.y == newpos.y) {
                         GateDetected gateDetected = new GateDetected() {

@@ -24,7 +24,7 @@ public class EnemyMovement : MyBehaviour
     {
         this.enemy = this.GetComponentInParent<Enemy>();
     }
-    public void Tracking()
+    public virtual void Tracking()
     {
         if(!CanMove) return;
         if(enemy.TarGet == null) return;

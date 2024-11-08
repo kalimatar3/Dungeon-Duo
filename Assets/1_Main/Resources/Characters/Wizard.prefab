@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 791187751815748}
   - component: {fileID: 9010054486587598891}
   - component: {fileID: 6998584123153888931}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PlayerCollector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCheck: 0
-  character: {fileID: 0}
+  player: {fileID: 0}
   box: {fileID: 9010054486587598891}
 --- !u!1 &1664845520051236829
 GameObject:
@@ -363,7 +363,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.057555288, y: 0.13694188}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -374,7 +374,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.40720737, y: 0.6830031}
+  m_Size: {x: 0.8081097, y: 1.11566}
   m_EdgeRadius: 0
 --- !u!50 &5257336478459867852
 Rigidbody2D:
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed4a4075bb4bbc419c49a8589423be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSO: {fileID: 11400000, guid: 7bb40e6e0fcf91148b4bbd231b32fcfc, type: 2}
+  playerSO: {fileID: 11400000, guid: 7bb40e6e0fcf91148b4bbd231b32fcfc, type: 2}
   hand: {fileID: 1681111379393635796}
   reciver: {fileID: 6925692840906629730}
   body: {fileID: 5257336478459867852}
@@ -429,9 +429,17 @@ MonoBehaviour:
   caninteract: 1
   candoskill: 1
   skillCooldownTime: 0
+  skillCooldownTimer: 0
+  SkillMpCost: 0
+  RecoverCombatSateTime: 5
+  RestoreoneDPtime: 0.2
+  RestoreoneDPtimer: 0
+  iscombatstate: 0
+  minnoticebox: {x: 0, y: 0}
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  UI: {fileID: 0}
 --- !u!1 &5045974014592158395
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +505,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.074097216, y: 0.097745284}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -508,7 +516,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48414552, y: 0.7836473}
+  m_Size: {x: 0.73323834, y: 1.0232809}
   m_EdgeRadius: 0
 --- !u!114 &6925692840906629730
 MonoBehaviour:
@@ -570,4 +578,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f0852b66b478e42b813085642825d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
+  player: {fileID: 0}

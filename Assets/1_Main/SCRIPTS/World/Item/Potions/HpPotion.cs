@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HpPotion : BaseItem
+public class HpPotion : Potion
 {
     [SerializeField] protected float amountofHP;
+    [SerializeField] protected float Radius;
     public float AmountofHP {get {return amountofHP;} set {amountofHP = value;}}
-    public override void OnCollect(Player player)
+    public override void OnInteract(Player player)
     {
-        base.OnCollect(player);
-        player.Reciver.IcrHP(amountofHP);
+        player.Reciver.IcrHP(amountofHP);    
+        this.DeSpawn();   
     }
+
 }

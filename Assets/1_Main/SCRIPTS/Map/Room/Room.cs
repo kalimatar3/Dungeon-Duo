@@ -15,6 +15,7 @@ public abstract class Room : MyBehaviour,IDespawnable
     public List<Roomgate> ListGate {get {return listgate;}}
     public HashSet<Vector2Int> FloorPositions {get {return floorpositions;}}
     public string CurstateName;
+    public bool IsConnected = false;
     protected virtual void OnEnable() {
         this.statemachine = new RoomStatemachine();
         this.closeState = new RoomCloseState(statemachine,this);

@@ -1,11 +1,12 @@
 
 using System;
 using System.Collections;
+using DG.Tweening.Plugins.Options;
 using UnityEngine;
 public abstract class Player : LazySingleton<Player>,IDespawnable
 {
     [Header("Statistics")]
-    [SerializeField] protected CharacterSO characterSO;
+    [SerializeField] protected CharacterSO playerSO;
     
     [Header("Components")]
     protected Weapon Curweapon;
@@ -27,13 +28,22 @@ public abstract class Player : LazySingleton<Player>,IDespawnable
     [SerializeField] protected bool caninteract = true;
     [SerializeField] protected bool candoskill = true;
     [SerializeField] protected float skillCooldownTime;
-    protected float SkillMpCost;
+    [SerializeField] protected float skillCooldownTimer;
+    [SerializeField] protected float SkillMpCost;
     protected float maxMp,curMp;
     protected float maxDp;
     protected float maxHp;
-    protected float level;
-    protected Vector2 minnoticebox;
+    protected int level;
+    [SerializeField] protected float RecoverCombatSateTime = 10f;
+    [SerializeField] protected float RestoreoneDPtime = 0.2f,RestoreoneDPtimer = 0;
+    [SerializeField] protected bool iscombatstate;
+    public Vector2 minnoticebox;
     [SerializeField] protected LayerMask EnemyLayer;
+    [Header("Corotine")]
+    protected Coroutine SkillCoolDownCr;
+    protected Coroutine AttackCoolDownCr;
+    [Header("UI")]
+    public GamePlay_Panel UI;
     #region Getter & setter
     public Transform Hand {get {return hand;}}
     public PlayerReciver Reciver { get {return reciver;}}
@@ -45,8 +55,9 @@ public abstract class Player : LazySingleton<Player>,IDespawnable
     public PlayerMovement Movement {get { return movement;}}
     public PlayerCollector Collector {get {return collector;}}
     public Rigidbody2D Body {get {return body;}}
-    public float Level {get {return level;} set {level = value;}}
-    public CharacterSO SO {get {return characterSO;}}
+    public int Level {get {return level;} set {level = value;}}
+    public CharacterSO SO {get {return playerSO;}}
+    public float SkillCooldownTimer {get {return skillCooldownTimer;}}
     public float CurMp {get {return curMp;}}
     public float MaxMp {get {return maxMp;} 
                         set {
@@ -120,8 +131,16 @@ public abstract class Player : LazySingleton<Player>,IDespawnable
     #region LoadData
     protected virtual void OnEnable() {
         this.statemachine.Initialize(idleState);
-        this.CalculateStats(1); 
+        this.CalculateStats(level); 
         StartCoroutine(this.CrDelayLoadNoticeBox());
+        StartCoroutine(this.CrDeLayLoadUI());
+    }
+    protected IEnumerator CrDeLayLoadUI() {
+        yield return new WaitUntil(()=> {
+            if(!PanelManager.instance.getPanelbyName("GamePlay_Panel")) return false;
+            return true;
+        });
+        UI = PanelManager.instance.getPanelbyName("GamePlay_Panel").GetComponent<GamePlay_Panel>();
     }
     protected IEnumerator CrDelayLoadNoticeBox() {
         yield return new WaitUntil(predicate:()=> {
@@ -130,20 +149,13 @@ public abstract class Player : LazySingleton<Player>,IDespawnable
         });
         noticeBox = new Vector2(CameraManager.Instance.ScreenWidth,CameraManager.Instance.ScreenLength);   
     }
-    public IEnumerator CrSpawn() {
-        yield return new WaitUntil(predicate:()=> {
-            if(MapManager.Instance == null) return false;
-            if(MapManager.Instance.Rooms.Count <= 0) return false;
-            return true;
-        });
-        this.transform.position = MapManager.Instance.Rooms[0].transform.position;      
-    }
     protected abstract void CalculateStats(int level);
     #endregion
     public virtual void Attack() {
         if(!canattack) return;
         if(Curweapon == null) return;
-        StartCoroutine(CrCoolDownAttack());
+        if(AttackCoolDownCr != null) StopCoroutine(AttackCoolDownCr);
+        AttackCoolDownCr = StartCoroutine(CrCoolDownAttack());
         Curweapon.AttackScheme();
     }
     protected IEnumerator CrCoolDownAttack() {
@@ -158,15 +170,25 @@ public abstract class Player : LazySingleton<Player>,IDespawnable
     protected abstract void SkillScheme();
     public void DoSkill() {
         if(!candoskill) return;
-        if(maxMp < SkillMpCost) return;
-        maxMp -= SkillMpCost;
-        StartCoroutine(this.CrCoolDownSkill());
+        if(curMp < SkillMpCost) return;
+        curMp -= SkillMpCost;
+        if(SkillCoolDownCr != null) StopCoroutine(SkillCoolDownCr);
+        SkillCoolDownCr = StartCoroutine(this.CrCoolDownSkill());
         this.SkillScheme();
     }
     protected IEnumerator CrCoolDownSkill() {
         this.candoskill = false;
-        yield return new WaitForSeconds(this.skillCooldownTime);
+        skillCooldownTimer = skillCooldownTime;
+        while (skillCooldownTimer > 0) {
+            skillCooldownTimer -= Time.deltaTime *1f;
+            UI.playerSkill_Button.playerSkillCoolDown_Slider.SetvalueSlider(skillCooldownTimer/skillCooldownTime);
+            yield return new WaitForFixedUpdate();
+        } 
         this.candoskill = true;
+    }
+    public void IcrMp(float value) {
+        this.curMp += value;
+        if(curMp > maxMp) curMp = maxMp;
     }
     protected void GetTarget()
     {
@@ -185,7 +207,7 @@ public abstract class Player : LazySingleton<Player>,IDespawnable
         }
     }
     protected virtual void ChangeState() {
-        if(Target != null) {
+        if(Target != null && Target.gameObject.activeInHierarchy) {
             this.statemachine.ChangeSate(detectedState);
         }
         else {
@@ -195,20 +217,44 @@ public abstract class Player : LazySingleton<Player>,IDespawnable
         Vector3 Direction = (crossHair.transform.position - this.transform.position).normalized;
         hand.transform.up = Direction;
     }
-    public void Levelup() {
+    public void RestoreDP() {
+        if(iscombatstate) 
+        {
+            this.RestoreoneDPtimer = 0;
+            return;
+        }
+        if(reciver.Dp >= this.maxDp) 
+        {
+            this.RestoreoneDPtimer = 0;
+            return;
+        }
+        RestoreoneDPtimer += Time.deltaTime *1f;
+        if(RestoreoneDPtimer >= RestoreoneDPtime) {
+            RestoreoneDPtimer = 0;
+            this.reciver.Dp++;
+        }
+    }
+    public Coroutine SetcombatStateCr;
+    public IEnumerator CrSetCombatState() {
+        this.iscombatstate = true;
+        yield return new WaitForSeconds(RecoverCombatSateTime);
+        this.iscombatstate = false;
+    }
+    public virtual float GetLevelupPricebyLevel(float level) {
+        return 1000 * (1 + level * 250);
     }
     protected void FixedUpdate() {
         this.GetTarget();
         this.ChangeState();
+        this.RestoreDP();
     }
     protected void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, NoticeBox);
     }
-
     public void DeSpawn()
     {
-       this.reciver.StopAllCoroutines();
+        ScenesManager.instance.LoadScenebyName(MyScene.MainMenuScene.ToString());
     }
 }

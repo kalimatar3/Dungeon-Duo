@@ -16,3 +16,4 @@ MonoBehaviour:
   Dame: 1
   Firerate: 0.75
   Range: 5
+  Icon: {fileID: 21300000, guid: 997b6313b06799a429d52cd93e18da3b, type: 3}

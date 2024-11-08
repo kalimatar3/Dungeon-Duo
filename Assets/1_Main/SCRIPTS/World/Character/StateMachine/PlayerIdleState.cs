@@ -11,10 +11,10 @@ public class PlayerIdleState : PlayerState
     public override void EnterState()
     {
         base.EnterState();
-        Debug.Log(character.name + " Enter IdleState");
         character.Movement.IsFacing = false;
         character.Canattack = true;
         character.Caninteract = true;
+        character.minnoticebox = character.NoticeBox;
     }
     public override void FrameUpdate()
     {

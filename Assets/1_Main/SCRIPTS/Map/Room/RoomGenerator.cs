@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class RoomGenerator : SimpleRandomWalkDungeonGenerator
 {
@@ -12,7 +15,15 @@ public class RoomGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField]
     [Range(0,10)]
     private int offset = 1;
+    #region  Getter && Setter
+    public int MinRoomWidth {get {return minRoomWidth;}}
+    public int MinRoomHeight {get {return minRoomHeight;}}
+    #endregion
     public void CreateRooms(int floorindex) {
+        this.dungeonWidth = 100  +  floorindex * 10;
+        this.dungeonHeight = 100 + floorindex * 10;
+        this.minRoomWidth = 20 + (floorindex/3) * 5;
+        this.minRoomHeight = 20 + (floorindex/3) * 5;
         var rooms = ProceduralGenerationAlgorithms.BinarySpacePartitioning
         (new BoundsInt((Vector3Int)StartPosition,new Vector3Int(dungeonWidth,dungeonHeight,0)),minRoomWidth,minRoomHeight);
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>();          
@@ -29,6 +40,7 @@ public class RoomGenerator : SimpleRandomWalkDungeonGenerator
     private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList,int floorindex)
     {
         HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
+        bool isexostupgraderoom = false;
         for (int i = 0; i < roomsList.Count; i++)
         {
             HashSet<Vector2Int> room = new HashSet<Vector2Int>();
@@ -45,7 +57,7 @@ public class RoomGenerator : SimpleRandomWalkDungeonGenerator
             floor.UnionWith(room);
             if(i == 0)
             {
-                if(floorindex <=0) {
+                if(floorindex <= 0) {
                     Transform firstroom = MapSpawner.Instance.Spawn("SpawnRoom",roomsList[i].center,Quaternion.identity);    
                     firstroom.GetComponent<Room>().Center = new Vector2Int((int)roomsList[i].center.x,(int)roomsList[i].center.y);
                     firstroom.GetComponent<Room>().CreateRoom(room);
@@ -59,16 +71,29 @@ public class RoomGenerator : SimpleRandomWalkDungeonGenerator
                 }
             }
             else if(i < roomsList.Count - 1) {
-                Transform newroom = MapSpawner.Instance.Spawn("FightRoom",roomsList[i].center,Quaternion.identity);
+                string newroomname = "FightRoom";
+                if(!isexostupgraderoom && MapManager.Instance.Curfloor % 3 == 0 && MapManager.Instance.Curfloor > 0 && UnityEngine.Random.value < 0.3f) {
+                    isexostupgraderoom = true;
+                    newroomname = "UpgradeItemRoom";
+                }
+                Transform newroom = MapSpawner.Instance.Spawn(newroomname,roomsList[i].center,Quaternion.identity);
                 newroom.GetComponent<Room>().Center = new Vector2Int((int)roomsList[i].center.x,(int)roomsList[i].center.y);
                 newroom.GetComponent<Room>().CreateRoom(room);
                 MapManager.Instance.Rooms.Add(newroom.GetComponent<Room>());
             }
             else {
-                Transform newroom = MapSpawner.Instance.Spawn("NextDungeonRoom",roomsList[i].center,Quaternion.identity);
-                newroom.GetComponent<Room>().Center = new Vector2Int((int)roomsList[i].center.x,(int)roomsList[i].center.y);
-                newroom.GetComponent<Room>().CreateRoom(room);
-                MapManager.Instance.Rooms.Add(newroom.GetComponent<Room>());
+                if(MapManager.Instance.Curfloor % 3 == 0) {
+                    Transform newroom = MapSpawner.Instance.Spawn("BossRoom",roomsList[i].center,Quaternion.identity);
+                    newroom.GetComponent<Room>().Center = new Vector2Int((int)roomsList[i].center.x,(int)roomsList[i].center.y);
+                    newroom.GetComponent<Room>().CreateRoom(room);
+                    MapManager.Instance.Rooms.Add(newroom.GetComponent<Room>());                    
+                }
+                else {
+                    Transform newroom = MapSpawner.Instance.Spawn("NextDungeonRoom",roomsList[i].center,Quaternion.identity);
+                    newroom.GetComponent<Room>().Center = new Vector2Int((int)roomsList[i].center.x,(int)roomsList[i].center.y);
+                    newroom.GetComponent<Room>().CreateRoom(room);
+                    MapManager.Instance.Rooms.Add(newroom.GetComponent<Room>());
+                }
             }
         }
         return floor;
@@ -93,16 +118,17 @@ public class RoomGenerator : SimpleRandomWalkDungeonGenerator
     }
     private Room Findclosestpositions(Room baseroom, List<Room> listroom)
     {
-            Room closestroom = baseroom;
-            float min = dungeonWidth;
-            foreach(var ele in listroom) {
-                if(ele == baseroom) continue;
-                Vector2Int dir = ele.Center - baseroom.Center;
-                if(dir.magnitude < min) {
-                    min = dir.magnitude;
-                    closestroom = ele;
-                }
+        Room closestroom = baseroom;
+        float min = dungeonWidth;
+        foreach(var ele in listroom) {
+            if(ele == baseroom || ele.IsConnected) continue;
+            Vector2Int dir = ele.Center - baseroom.Center;
+            if(dir.magnitude < min) {
+                min = dir.magnitude;
+                closestroom = ele;
             }
+        }
+        //closestroom.IsConnected = true;
         return closestroom;
     }
 }
