@@ -23,7 +23,9 @@ public class InputManager : MyBehaviour
         this.GetMovingInput();
     }
     protected void GetMovingInput() {
-        //this.MovingInput = new Vector2(leftJoyStick.Horizontal,leftJoyStick.Vertical);
-        this.MovingInput = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
+        this.MovingInput = new Vector2(leftJoyStick.Horizontal,leftJoyStick.Vertical);
+        #if UNITY_EDITOR
+        this.MovingInput += new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")) ;
+        #endif
     }
 }

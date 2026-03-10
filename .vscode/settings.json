@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Dungeon Duo Demo01.sln"
+    "dotnet.defaultSolution": "Dungeon Duo.slnx"
 }

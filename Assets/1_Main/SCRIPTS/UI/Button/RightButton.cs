@@ -22,6 +22,7 @@ public class RightButton : MyBehaviour
         this.interact_Button.player = Player.Instance;
     }
     protected void FixedUpdate() {
+        if(Player.Instance == null) return;
         if(Player.Instance.Collector.IScheck) {
             this.interact_Button.gameObject.SetActive(true);
             this.playerAttack_Button.gameObject.SetActive(false);

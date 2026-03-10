@@ -55,12 +55,12 @@ public class PlayerReciver : DameReciver
         base.Knockback(hitable, power);
         Debug.Log("knockback");
         Vector3 dir = (transform.position - new Vector3(hitable.GetTransform().position.x,transform.position.y,this.transform.position.z)).normalized;
-        player.Body.velocity =  Vector2.zero;
+        player.Body.linearVelocity =  Vector2.zero;
         player.Body.AddForce(dir * power, ForceMode2D.Impulse);
         StartCoroutine(CrStopKnockBack());  
     }
     protected IEnumerator CrStopKnockBack() {
         yield return new WaitForSeconds(0.5f);
-        player.Body.velocity = Vector2.zero;
+        player.Body.linearVelocity = Vector2.zero;
     }
 }

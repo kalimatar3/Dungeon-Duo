@@ -6,7 +6,7 @@ using UnityEngine;
 
 public abstract class DameDealer : MyBehaviour, IHitable
 {
-    [SerializeField] public Collider2D Box { get; set; }
+    public Collider2D Box { get; set; }
     [SerializeField] protected float dame;
     [SerializeField] protected bool CanDeal = true;
     [SerializeField] protected bool Multicalhit = false;
