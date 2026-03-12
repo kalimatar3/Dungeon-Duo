@@ -53,7 +53,7 @@ A roguelike game featuring procedural map generation
 
 1. Clone repository
 
-git clone [[https://github.com/username/brick-space](https://github.com/kalimatar3/Testris-2.75D.git)](https://github.com/kalimatar3/Dungeon-Duo.git)
+git clone https://github.com/kalimatar3/Testris-2.75D.git)](https://github.com/kalimatar3/Dungeon-Duo.git
 
 2. Open with Unity Hub (Unity 6+)
 3. Open scene Assets/Scenes/0_LoadingScence.unity
